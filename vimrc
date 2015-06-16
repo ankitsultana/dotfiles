@@ -9,7 +9,6 @@ set shiftwidth=4
 set hlsearch
 set title
 set pastetoggle=<F2>
-"Mapping for saving 
 "Some stuff related to powerline
 let g:airline#extensions#tabline#enabled = 1
 "let g:Powerline_symbols='fancy'
@@ -42,6 +41,7 @@ ino <down> <Nop>
 ino <left> <Nop>
 ino <right> <Nop>
 ino <up> <Nop>
+"Mapping for saving 
 vno <down> <Nop>
 vno <left> <Nop>
 vno <up> <Nop>
