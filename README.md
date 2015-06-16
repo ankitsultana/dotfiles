@@ -11,7 +11,7 @@ A snapshot of vim-airline with Solarized Light:
 ![alt text](https://camo.githubusercontent.com/44d3ea9af4d9b289521802e734f40cc16e153b15/68747470733a2f2f662e636c6f75642e6769746875622e636f6d2f6173736574732f3330363530322f313030393432392f64363933303664612d306233382d313165332d393462662d3763366533656566343165392e706e67 "Solarized Light")
 
 
-Before starting, remove any existing ```.vim``` or ```vim``` directory from your home directory and 
+**Note:** Before starting, remove any existing ```.vim``` or ```vim``` directory from your home directory and 
 ```.vimrc``` file from your home directory.
 
 ##STEPS
