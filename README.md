@@ -1,4 +1,4 @@
-# Dotfiles (for dummies) (Wait for Fix)
+# Dotfiles (for dummies)
 Contains the dotfiles for using vim. Works with iTerm 2 on OS X.
 At the end of this, if everything goes well you will have vim with ```vim-airline``` installed, with color scheme solarized (Dark for iTerm and Light for MacVim. You will also have ```NERDTree``` and ```pathogen``` installed.
 
