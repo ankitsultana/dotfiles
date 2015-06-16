@@ -9,22 +9,30 @@ endif
 
 "Basic Stuff
 set encoding=utf8
-set visualbell
-set noswapfile
-set nobackup
-set nowb
-set scrolloff=8
-syntax enable
 filetype plugin indent on
+syntax enable
 filetype on
 set nocompatible
 set cursorline
 set clipboard=unnamed
+
+"Fast cursor movement
 set ttyfast
+
+"Scroll starts when about eight lines remain on top or bottom
+set scrolloff=8
+
+"Turn off audible bell
+set visualbell
+
+"Swap files are a pain
+set noswapfile
+set nobackup
+set nowb
+
+
 "Display the status line always
 set laststatus=2
-
-"let g:solarized_termcolors= 256
 
 "Ruby hashrocket madness
 nnoremap <leader>r :%s/:\(\w*\)\s*=>\s*/\1: /gc<cr>
@@ -44,8 +52,8 @@ set pastetoggle=<F2>
 set ruler
 set relativenumber
 
-"Setting bg = dark, since I am using solarized
-"set background=dark
+
+"Colors.. solarized ftw 
 colorscheme solarized
 "colorscheme lapis256
 "colorscheme wells-colors
@@ -63,22 +71,6 @@ set title
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
 set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h14
-"let g:Powerline_symbols='fancy'		
-
-"Stuff ends here
-"Unicode symbols
-"let g:airline_left_sep='»'
-"let g:airline_left_sep='▶'
-"let g:airline_right_sep='«'
-"let g:airline_right_sep='◀'
-"let g:airline_symbols.linenr='␊'
-"let g:airline_symbols.linenr='␤'
-"let g:airline_symbols.linenr='¶'
-"let g:airline_symbols.branch='⎇'
-"let g:airline_symbols.paste='ρ'
-"let g:airline_symbols.paste='Þ'
-"let g:airline_symbols.paste='∥'
-"let g:airline_symbols.whitespace='Ξ'
 
 "Unmap the arrow keys
 no <down> ddp
