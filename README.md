@@ -45,10 +45,10 @@ Before starting, remove any existing ```.vim``` or ```vim``` directory from your
   
 ###Step 3: Clone this repo
   
-  Just clone this repo in your home directory. Open up terminal and type:
+  Just clone this repo in your home directory (Note we are going to use recursive since the repo contains submodules). Open up terminal and type:
   
   ```
-  git clone https://github.com/bk2dcradle/Dotfiles
+  git clone --recursive https://github.com/bk2dcradle/Dotfiles.git
   ```
 
 ###Step 4: Move and rename vim directory
