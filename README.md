@@ -21,8 +21,9 @@ A snapshot of vim-airline with Solarized Light:
  3. Clone this repo in your home directory
  4. Move ```vim``` directory from Dotfiles to your home directory, rename it to ```.vim```
  5. Move ```vimrc``` from Dotfiles to your home directory and rename it to ```.vimrc```
- 6. Change settings in iTerm Preferences
- 7. Done!
+ 6. Install solarized for iTerm
+ 7. Change settings in iTerm Preferences
+ 8. Done!
 
 ###Step 1: Remove existing files
   
