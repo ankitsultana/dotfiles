@@ -1,41 +1,48 @@
 execute pathogen#infect()
 
+"Change anyone to dark as you prefer
 if has('gui_running')
 	set background=light
 else
-	set background=dark
+	set background=light
 endif
 
+"Awesome and Non Conventional Mappings 
+
+inoremap asd <Esc>				"Type asd in insert mode to go to normal mode.. 
+nnoremap N Nzz						"Center in on the line where the search element is found
+nnoremap n nzz						"Same
 
 "Basic Stuff
 set encoding=utf8
-filetype plugin indent on
+set visualbell
 syntax enable
+filetype plugin indent on
 filetype on
 set nocompatible
-set cursorline
 set clipboard=unnamed
 
-"Fast cursor movement
-set ttyfast
+"Cursor Lines are good especially with solarized
+set cursorline
 
-"Scroll starts when about eight lines remain on top or bottom
-set scrolloff=8
-
-"Turn off audible bell
-set visualbell
-
-"Swap files are a pain
+"Say no to swap files
 set noswapfile
 set nobackup
 set nowb
 
+"This is just awesome, Scroll starts when cursor is 8 lines away from top/bottom
+set scrolloff=8
+
+"Set fast cursor
+set ttyfast
+
+"Show commands
+set showcmd
 
 "Display the status line always
 set laststatus=2
 
-"Ruby hashrocket madness
-nnoremap <leader>r :%s/:\(\w*\)\s*=>\s*/\1: /gc<cr>
+"let g:solarized_termcolors= 256
 
 "Setting tab to 2 spaces
 set tabstop=2
@@ -52,8 +59,6 @@ set pastetoggle=<F2>
 set ruler
 set relativenumber
 
-
-"Colors.. solarized ftw 
 colorscheme solarized
 "colorscheme lapis256
 "colorscheme wells-colors
@@ -61,13 +66,14 @@ colorscheme solarized
 "colorscheme itg_flat
 "colorscheme shades_of_teal
 
-"GitGutter
+"Incremental search is good
+set incsearch
 
-"set incsearch
+"Highlight search elements
 set hlsearch
 set title
 
-"Some stuff related to powerline
+"PowerLine related stuff
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
 set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h14
@@ -85,7 +91,7 @@ vno <down> <Nop>
 vno <left> <Nop>
 vno <up> <Nop>
 
-"	««««««		Custom Mappings			»»»»»»
+"	««««««		Custom Mappings(Harmless)			»»»»»»
 "general mappings
 nmap <C-Tab> :tabnext<CR>
 nmap <C-S-Tab> :tabprevious<CR>
