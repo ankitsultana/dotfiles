@@ -35,8 +35,8 @@ Before starting, remove any existing ```.vim``` or ```vim``` directory from your
   After cloning the directory, navigate to ```powerline-fonts``` and then to ```Meslo``` and open each ```.otf``` file. If powerline-fonts is in your home directory, then just type:
   
   ```
-    cd ~/powerline-fonts/Meslo
-    open Meslo\ LG\ *
+  cd ~/powerline-fonts/Meslo
+  open Meslo\ LG\ *
   ```
   
   Just click on ```Install Font``` on each of the separate windows that open up. Another fontbook window might open up. Ignore that, and after installing each of the fonts close that fontbook.
@@ -48,7 +48,7 @@ Before starting, remove any existing ```.vim``` or ```vim``` directory from your
   Just clone this repo in your home directory. Open up terminal and type:
   
   ```
-    git clone https://github.com/bk2dcradle/Dotfiles
+  git clone https://github.com/bk2dcradle/Dotfiles
   ```
 
 ###Step 4: Move and rename vim directory
@@ -56,7 +56,7 @@ Before starting, remove any existing ```.vim``` or ```vim``` directory from your
   In terminal type:
   
   ```
-    mv ~/Dotfiles/vim ~/.vim
+  mv ~/Dotfiles/vim ~/.vim
   ```
   
 ###Step 5: Move and rename vimrc
@@ -64,7 +64,7 @@ Before starting, remove any existing ```.vim``` or ```vim``` directory from your
   In terminal type:
   
   ```
-    mv ~/Dotfiles/vimrc ~/.vimrc
+  mv ~/Dotfiles/vimrc ~/.vimrc
   ```
 
 ###Step 6: Change settings in iTerm 
