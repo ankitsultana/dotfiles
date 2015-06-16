@@ -50,6 +50,13 @@ Before starting, remove any existing ```.vim``` or ```vim``` directory from your
   ```
   git clone --recursive https://github.com/bk2dcradle/Dotfiles.git
   ```
+  
+  Then do:
+  ```
+  cd ~/Dotfiles/vim/bundle
+  git submodule init
+  git submodule update
+  ```
 
 ###Step 4: Move and rename vim directory
 
@@ -67,11 +74,19 @@ Before starting, remove any existing ```.vim``` or ```vim``` directory from your
   mv ~/Dotfiles/vimrc ~/.vimrc
   ```
 
-###Step 6: Change settings in iTerm 
+###Step 6: Install solarized for iTerm
+ 
+  Clone solarized in your home directory from [here](https://github.com/altercation/solarized).
+  
+  Open up ```iTerm``` go to ```Preferences -> Profiles -> Colors -> Load Presets``` Browse to ```iterm2-colors-solarized``` folder and load both ```light``` and ```dark``` versions. 
+  
+  Finally select the one you like.
+
+###Step 7: Change settings in iTerm 
 
   Open up ```iTerm``` go to ```Preferences -> Profiles -> Text``` and ```change font``` for both ```Regular``` and ```Non-ASCII```, to ```18pt Meslo LG S Regular for Powerline```.
   
-###Step 7:
+###Step 8:
   
   Restart iTerm and type vim. 
   
