@@ -14,12 +14,24 @@ endif
 
 "Switch between split panes in normal mode using Backspace
 nnoremap <bs> <c-w>w
+"Another
+nnoremap <D-]> <c-w>w
 "Type asd in insert mode to go to normal mode.. 
 inoremap asd <Esc>	
 "Center in on the line where the search element is found
 nnoremap N Nzz						
 "Same
 nnoremap n nzz						
+"Open vimrc in a split to quickly make changes
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+"Source vimrc quikly
+noremap <leader>sv :source $MYVIMRC<cr>
+"Quote the selected WORD
+nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
+nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+"Faster set paste
+nnoremap <leader>p :set paste<cr>
+nnoremap <leader>P :set nopaste<cr>
 
 "Basic Stuff
 set encoding=utf8
@@ -28,7 +40,19 @@ syntax enable
 filetype plugin indent on
 filetype on
 set nocompatible
+
+"For windows users. Doesn't do anything for others
 set clipboard=unnamed
+
+"Abbreviations
+iabbrev vitr vector<int>::iterator
+iabbrev litr list<int>::iterator
+iabbrev vltr vector<LL>::iterator
+iabbrev lltr list<LL>::iterator
+
+iabbrev mygmail ankitsultana@gmail.com
+
+"Sample text lorem ipsum dolor
 
 "Cursor Lines are good especially with solarized
 set cursorline
