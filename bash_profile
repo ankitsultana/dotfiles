@@ -1,7 +1,7 @@
 export PS1="\e[0;31msolarized \e[m \e[1;32m\W\e[m \e[1;36m»»\e[m "
 export PS2="	»»» "
 
-#a convenient function to avoid adding boilerplate code 
+# a convenient function to avoid adding boilerplate code 
 # template.cc contains boilerplate which I use for Competitive Programming
 dress() {
 	if [ -e $1 ] 
