@@ -10,7 +10,7 @@ dress() {
 echo 'dress'
 
 tmate() {
-  open $1 -a "TextMate"
+	open $1 -a "TextMate"
 }
 echo 'tmate'
 
