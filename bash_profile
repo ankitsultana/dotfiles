@@ -4,13 +4,18 @@ export PS2="	»»» "
 #a convenient function to avoid adding boilerplate code 
 # template.cc contains boilerplate which I use for Competitive Programming
 dress() {
-	cp ~/.template.cc $1
-	vim $1
+	if [ -e $1 ] 
+	then
+		echo "File Already exists!!"
+	else	
+		cp ~/.template.cc $1
+		vim $1
+	fi
 }
 echo 'dress'
 
 tmate() {
-	open $1 -a "TextMate"
+  open $1 -a "TextMate"
 }
 echo 'tmate'
 
