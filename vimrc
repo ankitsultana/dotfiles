@@ -14,8 +14,6 @@ endif
 
 "Switch between split panes in normal mode using Backspace
 nnoremap <bs> <c-w>w
-"Another
-nnoremap <D-]> <c-w>w
 "Type asd in insert mode to go to normal mode.. 
 inoremap asd <Esc>	
 "Center in on the line where the search element is found
