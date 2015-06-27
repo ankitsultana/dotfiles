@@ -3,6 +3,11 @@ export PS2="	»»» "
 
 # a convenient function to avoid adding boilerplate code 
 # template.cc contains boilerplate which I use for Competitive Programming
+
+submit() {
+	cat $1 | pbcopy
+}
+
 dress() {
 	if [ -e $1 ] 
 	then
