@@ -1,37 +1,87 @@
 execute pathogen#infect()
 
-"Change anyone to dark as you prefer
-if has('gui_running')
-	set background=light
-else
-	set background=light
-endif
-
 "Leader
 :let mapleader=","
 
-"Awesome and Non Conventional Mappings 
+" ««««««  Change anyone to dark as you prefer  »»»»»»
+"====================================================
+
+if has('gui_running')
+	set background=light
+else
+	set background=dark
+endif
+
+" ««««««  Spell check stuff  »»»»»»
+"==================================
+
+set spell spelllang=en_us
+
+nnoremap <leader>sp :call FixLastSpellingError()<cr>
+
+"Function to wrap things up
+function! FixLastSpellingError()
+	normal! mm[s1z=`m
+endfunction
+
+"get template for hashing questions
+function! HashingTemplate()
+	echom "Working"	
+endfunction
+
+" «««««««  Commenting Code according to file type  »»»»»»
+"========================================================
+
+autocmd FileType python nnoremap <buffer> <leader>c mm^i#<esc>`ml
+autocmd FileType python nnoremap <buffer> <leader>C mm^vd`mh
+
+autocmd FileType javascript nnoremap <buffer> <leader>c mm^i//<esc>`mll
+autocmd FileType javascript nnoremap <buffer> <leader>C mm^vld`mhh
+
+autocmd FileType cpp nnoremap <buffer> <leader>c mm^i//<esc>`mll
+autocmd FileType cpp nnoremap <buffer> <leader>C mm^vld`mhh
+
+autocmd FileType vim nnoremap <buffer> <leader>c mm^i"<esc>`ml
+autocmd FileType vim nnoremap <buffer> <leader>C mm^vd<esc>`mh
+
+autocmd FileType ruby nnoremap <buffer> <leader>c mm^i#<esc>`ml
+autocmd FileType ruby nnoremap <buffer> <leader>C mm^vd`mh
+
+" ««««««  Awesome and Non Conventional Mappings  »»»»»»
+"======================================================
 
 "Switch between split panes in normal mode using Backspace
 nnoremap <bs> <c-w>w
+
+"Another
+nnoremap <D-]> <c-w>w
+
 "Type asd in insert mode to go to normal mode.. 
 inoremap asd <Esc>	
+
 "Center in on the line where the search element is found
 nnoremap N Nzz						
+
 "Same
 nnoremap n nzz						
+
 "Open vimrc in a split to quickly make changes
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-"Source vimrc quikly
+
+"Source vimrc quickly
 noremap <leader>sv :source $MYVIMRC<cr>
+
 "Quote the selected WORD
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
+
 "Faster set paste
 nnoremap <leader>p :set paste<cr>
 nnoremap <leader>P :set nopaste<cr>
 
-"Basic Stuff
+" ««««««  Basic Stuff  »»»»»»
+"============================
+
 set encoding=utf8
 set visualbell
 syntax enable
@@ -42,15 +92,24 @@ set nocompatible
 "For windows users. Doesn't do anything for others
 set clipboard=unnamed
 
-"Abbreviations
+" ««««««  Abbreviations  »»»»»»
+"==============================
+
+"c++ stuff
 iabbrev vitr vector<int>::iterator
 iabbrev litr list<int>::iterator
 iabbrev vltr vector<LL>::iterator
 iabbrev lltr list<LL>::iterator
+iabbrev sitr set<int>::iterator
+iabbrev sltr set<LL>::iterator
 
+"General
 iabbrev mygmail ankitsultana@gmail.com
 
 "Sample text lorem ipsum dolor
+
+" ««««««  SETTERS  »»»»»»
+"========================
 
 "Cursor Lines are good especially with solarized
 set cursorline
@@ -71,8 +130,6 @@ set showcmd
 
 "Display the status line always
 set laststatus=2
-
-"let g:solarized_termcolors= 256
 
 "Setting tab to 2 spaces
 set tabstop=2
@@ -122,6 +179,8 @@ vno <left> <Nop>
 vno <up> <Nop>
 
 "	««««««		Custom Mappings(Harmless)			»»»»»»
+"===========================================
+
 "general mappings
 nmap <C-Tab> :tabnext<CR>
 nmap <C-S-Tab> :tabprevious<CR>
