@@ -1,6 +1,8 @@
 execute pathogen#infect()
 
-"Leader
+" ««««««  Leader  »»»»»»
+"=======================
+
 :let mapleader=","
 
 " ««««««  Change anyone to dark as you prefer  »»»»»»
@@ -15,7 +17,9 @@ endif
 " ««««««  Spell check stuff  »»»»»»
 "==================================
 
-set spell spelllang=en_us
+if !did_filetype()
+	set spell spelllang=en_us
+endif
 
 nnoremap <leader>sp :call FixLastSpellingError()<cr>
 
@@ -47,6 +51,7 @@ augroup comment
 
 	autocmd FileType ruby nnoremap <buffer> <leader>c mm^i#<esc>`ml
 	autocmd FileType ruby nnoremap <buffer> <leader>C mm^vd`mh
+	
 augroup END
 
 " ««««««  Awesome and Non Conventional Mappings  »»»»»»
@@ -80,6 +85,14 @@ nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
 "Faster set paste
 nnoremap <leader>p :set paste<cr>
 nnoremap <leader>P :set nopaste<cr>
+
+" ««««««  Movement Mappings  »»»»»»
+"==================================
+
+"Doing stuff inside parens
+onoremap p i(
+onoremap in( :<c-u>normal! f(vi(<cr>
+"if (x < y)
 
 " ««««««  Basic Stuff  »»»»»»
 "============================
