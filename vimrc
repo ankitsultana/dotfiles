@@ -32,20 +32,22 @@ endfunction
 " «««««««  Commenting Code according to file type  »»»»»»
 "========================================================
 
-autocmd FileType python nnoremap <buffer> <leader>c mm^i#<esc>`ml
-autocmd FileType python nnoremap <buffer> <leader>C mm^vd`mh
+augroup comment
+	autocmd FileType python nnoremap <buffer> <leader>c mm^i#<esc>`ml
+	autocmd FileType python nnoremap <buffer> <leader>C mm^vd`mh
 
-autocmd FileType javascript nnoremap <buffer> <leader>c mm^i//<esc>`mll
-autocmd FileType javascript nnoremap <buffer> <leader>C mm^vld`mhh
+	autocmd FileType javascript nnoremap <buffer> <leader>c mm^i//<esc>`mll
+	autocmd FileType javascript nnoremap <buffer> <leader>C mm^vld`mhh
 
-autocmd FileType cpp nnoremap <buffer> <leader>c mm^i//<esc>`mll
-autocmd FileType cpp nnoremap <buffer> <leader>C mm^vld`mhh
+	autocmd FileType cpp nnoremap <buffer> <leader>c mm^i//<esc>`mll
+	autocmd FileType cpp nnoremap <buffer> <leader>C mm^vld`mhh
 
-autocmd FileType vim nnoremap <buffer> <leader>c mm^i"<esc>`ml
-autocmd FileType vim nnoremap <buffer> <leader>C mm^vd<esc>`mh
+	autocmd FileType vim nnoremap <buffer> <leader>c mm^i"<esc>`ml
+	autocmd FileType vim nnoremap <buffer> <leader>C mm^vd<esc>`mh
 
-autocmd FileType ruby nnoremap <buffer> <leader>c mm^i#<esc>`ml
-autocmd FileType ruby nnoremap <buffer> <leader>C mm^vd`mh
+	autocmd FileType ruby nnoremap <buffer> <leader>c mm^i#<esc>`ml
+	autocmd FileType ruby nnoremap <buffer> <leader>C mm^vd`mh
+augroup END
 
 " ««««««  Awesome and Non Conventional Mappings  »»»»»»
 "======================================================
