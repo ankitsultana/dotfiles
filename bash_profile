@@ -1,13 +1,13 @@
 export PS1="\e[0;31msolarized \e[m \e[1;32m\W\e[m \e[1;36m»»\e[m "
 export PS2="	»»» "
 
-# a convenient function to avoid adding boilerplate code 
-# template.cc contains boilerplate which I use for Competitive Programming
-
 submit() {
 	cat $1 |pbcopy
 }
 echo 'submit'
+
+# a convenient function to avoid adding boilerplate code 
+# template.cc contains boilerplate which I use for Competitive Programming
 
 dress() {
 	if [ -e $1 ] 
@@ -76,6 +76,12 @@ echo 'hidefiles'
 
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES'
 echo 'showfiles'
+
+alias updgitbash='cp ~/.bash_profile ~/GitHub/Dotfiles/bash_profile'
+echo 'updgitbash'
+
+alias updgitvim='cp ~/.vimrc ~/GitHub/Dotfiles/vimrc'
+echo 'updgitvim'
 
 # Setting PATH for Python 3.4
 # The orginal version is saved in .bash_profile.pysave
