@@ -5,19 +5,35 @@ export PS2="	»»» "
 # template.cc contains boilerplate which I use for Competitive Programming
 
 submit() {
-	cat $1 | pbcopy
+	cat $1 |pbcopy
 }
+echo 'submit'
 
 dress() {
 	if [ -e $1 ] 
 	then
 		echo "File Already exists!!"
+		read T
+		vim $1
 	else	
 		cp ~/.template.cc $1
 		vim $1
 	fi
 }
 echo 'dress'
+
+shortdress() {
+	if [ -e $1 ] 
+	then
+		echo "File Already exists!!"
+		read T
+		vim $1
+	else	
+		cp ~/.template2.cc $1
+		vim $1
+	fi
+}
+echo 'shortdress'
 
 tmate() {
   open $1 -a "TextMate"
@@ -43,6 +59,9 @@ echo 'py -> python3'
 
 alias gotospoj='cd ~/Desktop/Desk/CS/Programming/Sport/C++/spoj/'
 echo 'gotospoj'
+
+alias gotoimpl='gotospoj; cd ../Implementations'
+echo 'gotoimpl'
 
 #A touch of Naruto
 alias almighty_push='git push origin master'
