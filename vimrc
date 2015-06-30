@@ -3,7 +3,7 @@ execute pathogen#infect()
 " ««««««  Leader  »»»»»»
 "=======================
 
-:let mapleader=","
+let mapleader=","
 
 " ««««««  Change anyone to dark as you prefer  »»»»»»
 "====================================================
