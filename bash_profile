@@ -1,5 +1,20 @@
-export PS1="\e[0;31msolarized \e[m \e[1;32m\W\e[m \e[1;36m»»\e[m "
+export PS1="\e[0;31msolarized\e[m\e[1;29m\$(parse_git_branch)\e[m \e[1;32m\W\e[m \e[1;36m»»\e[m "
 export PS2="	»»» "
+
+#Git stuff
+gitupdate() {
+	git add $1
+	git commit -m "Update"
+	git push origin master
+}
+echo 'gitupdate'
+
+#Danger
+parse_git_branch() {
+  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+#export PIP_REQUIRE_VIRTUALENV=true
 
 submit() {
 	cat $1 |pbcopy
@@ -88,3 +103,8 @@ echo 'updgitvim'
 PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
 export PATH
 if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# Setting PATH for Python 2.7
+# The orginal version is saved in .bash_profile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH
