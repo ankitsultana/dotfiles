@@ -1,5 +1,22 @@
 execute pathogen#infect()
 
+" ««««««  Paste in insert mode without having to worry about set paste  »»»»»»
+"=============================================================================
+
+if &term =~ "xterm.*"
+    let &t_ti = &t_ti . "\e[?2004h"
+    let &t_te = "\e[?2004l" . &t_te
+    function XTermPasteBegin(ret)
+        set pastetoggle=<Esc>[201~
+        set paste
+        return a:ret
+    endfunction
+    map <expr> <Esc>[200~ XTermPasteBegin("i")
+    imap <expr> <Esc>[200~ XTermPasteBegin("")
+    cmap <Esc>[200~ <nop>
+    cmap <Esc>[201~ <nop>
+endif
+
 " ««««««  Leader  »»»»»»
 "=======================
 
@@ -30,7 +47,7 @@ endfunction
 
 "get template for hashing questions
 function! HashingTemplate()
-	echom "Working"	
+	echom "Work in progress, Truth is I am too lazy"
 endfunction
 
 " «««««««  Commenting Code according to file type  »»»»»»
@@ -51,7 +68,6 @@ augroup comment
 
 	autocmd FileType ruby nnoremap <buffer> <leader>c mm^i#<esc>`ml
 	autocmd FileType ruby nnoremap <buffer> <leader>C mm^vd`mh
-	
 augroup END
 
 " ««««««  Awesome and Non Conventional Mappings  »»»»»»
@@ -59,9 +75,6 @@ augroup END
 
 "Switch between split panes in normal mode using Backspace
 nnoremap <bs> <c-w>w
-
-"Another
-nnoremap <D-]> <c-w>w
 
 "Type asd in insert mode to go to normal mode.. 
 inoremap asd <Esc>	
@@ -81,10 +94,6 @@ noremap <leader>sv :source $MYVIMRC<cr>
 "Quote the selected WORD
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
 nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
-
-"Faster set paste
-nnoremap <leader>p :set paste<cr>
-nnoremap <leader>P :set nopaste<cr>
 
 " ««««««  Movement Mappings  »»»»»»
 "==================================
@@ -162,11 +171,6 @@ set ruler
 set relativenumber
 
 colorscheme solarized
-"colorscheme lapis256
-"colorscheme wells-colors
-"colorscheme wolfpack
-"colorscheme itg_flat
-"colorscheme shades_of_teal
 
 "Incremental search is good
 set incsearch
@@ -204,7 +208,6 @@ map <C-Tab> :tabnext<CR>
 imap <C-S-Tab> <ESC> :tabprevious<CR>
 imap <C-Tab> <ESC> :tabnext<CR>
 noremap <F7> :set expandtab!<CR>
-
 
 "Rarely used stuff
 nmap gO O<ESC>j
