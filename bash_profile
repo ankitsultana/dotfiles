@@ -5,7 +5,11 @@ export PS2="	»»» "
 gitupdate() {
 	git add $1
 	git commit -m "Update"
-	git push origin master
+	if [ ! -z "$2" ]; then
+		git push origin $2
+	else
+		git push origin master
+	fi
 }
 echo 'gitupdate'
 
