@@ -28,3 +28,6 @@
 [submodule "vim/bundle/l9"]
 	path = vim/bundle/l9
 	url = https://github.com/vim-scripts/l9
+[submodule "vim/bundle/tlib_vim"]
+	path = vim/bundle/tlib_vim
+	url = https://github.com/tomtom/tlib_vim
