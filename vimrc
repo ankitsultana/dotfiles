@@ -1,5 +1,8 @@
 execute pathogen#infect()
 
+colorscheme solarized
+"colorscheme molokai
+
 " ««««««  Toggle color scheme using a mapping  »»»»»»
 "====================================================
 
@@ -11,7 +14,7 @@ function! BgToggleSol()
 	endif
 endfunction
 
-nnoremap <leader>ct :call BgToggleSol()<cr>
+nnoremap <leader>q :call BgToggleSol()<cr>
 
 " ««««««  Paste in insert mode without having to worry about set paste  »»»»»»
 "=============================================================================
@@ -20,7 +23,7 @@ nnoremap <leader>ct :call BgToggleSol()<cr>
 if &term =~ "xterm.*"
     let &t_ti = &t_ti . "\e[?2004h"
     let &t_te = "\e[?2004l" . &t_te
-    function XTermPasteBegin(ret)
+    function! XTermPasteBegin(ret)
         set pastetoggle=<Esc>[201~
         set paste
         return a:ret
@@ -40,7 +43,8 @@ let mapleader=","
 "====================================================
 
 if has('gui_running')
-	set background=light
+	colorscheme molokai
+	set background=dark
 else
 	set background=dark
 endif
@@ -184,7 +188,6 @@ set pastetoggle=<F2>
 set ruler
 set relativenumber
 
-colorscheme solarized
 
 "Incremental search is good
 set incsearch
