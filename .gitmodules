@@ -25,3 +25,6 @@
 [submodule "vim/bundle/FuzzyFinder"]
 	path = vim/bundle/FuzzyFinder
 	url = https://github.com/vim-scripts/FuzzyFinder
+[submodule "vim/bundle/l9"]
+	path = vim/bundle/l9
+	url = https://github.com/vim-scripts/l9
