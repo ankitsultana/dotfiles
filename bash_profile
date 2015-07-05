@@ -11,7 +11,25 @@ gitupdate() {
 		git push origin master
 	fi
 }
-echo 'gitupdate'
+echo "gitupdate"
+
+updvim() {
+	cp ~/.vimrc ~/GitHub/Dotfiles/vimrc
+	cd ~/GitHub/Dotfiles/
+	git add vimrc
+	git commit -m "Automated Update"
+	git push origin master
+}
+echo "updvim"
+
+updsh() {
+	cp ~/.bash_profile ~/GitHub/Dotfiles/bash_profile
+	cd ~/GitHub/Dotfiles/
+	git add bash_profile
+	git commit -m "Automated Update"
+	git push origin master
+}
+echo "updsh"
 
 #Danger
 parse_git_branch() {
@@ -95,12 +113,6 @@ echo 'hidefiles'
 
 alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES'
 echo 'showfiles'
-
-alias updgitbash='cp ~/.bash_profile ~/GitHub/Dotfiles/bash_profile'
-echo 'updgitbash'
-
-alias updgitvim='cp ~/.vimrc ~/GitHub/Dotfiles/vimrc'
-echo 'updgitvim'
 
 # Setting PATH for Python 3.4
 # The orginal version is saved in .bash_profile.pysave
