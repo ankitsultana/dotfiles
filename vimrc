@@ -1,7 +1,6 @@
 execute pathogen#infect()
 
 colorscheme solarized
-"colorscheme molokai
 
 " ««««««  Toggle color scheme using a mapping  »»»»»»
 "====================================================
