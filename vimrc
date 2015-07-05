@@ -1,7 +1,7 @@
 execute pathogen#infect()
 
-" ««««««  Paste in insert mode without having to worry about set paste  »»»»»»
-"=============================================================================
+" ««««««  Toggle color scheme using a mapping  »»»»»»
+"====================================================
 
 function! BgToggleSol()
 	if &background == "light"
@@ -12,6 +12,10 @@ function! BgToggleSol()
 endfunction
 
 nnoremap <leader>ct :call BgToggleSol()<cr>
+
+" ««««««  Paste in insert mode without having to worry about set paste  »»»»»»
+"=============================================================================
+
 
 if &term =~ "xterm.*"
     let &t_ti = &t_ti . "\e[?2004h"
