@@ -3,6 +3,16 @@ execute pathogen#infect()
 " ««««««  Paste in insert mode without having to worry about set paste  »»»»»»
 "=============================================================================
 
+function! BgToggleSol()
+	if &background == "light"
+		execute ":set background=dark"
+	else
+		execute ":set background=light"
+	endif
+endfunction
+
+nnoremap <leader>ct :call BgToggleSol()<cr>
+
 if &term =~ "xterm.*"
     let &t_ti = &t_ti . "\e[?2004h"
     let &t_te = "\e[?2004l" . &t_te
