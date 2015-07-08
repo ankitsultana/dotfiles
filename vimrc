@@ -13,7 +13,7 @@ function! BgToggleSol()
 	endif
 endfunction
 
-nnoremap <leader>q :call BgToggleSol()<cr>
+nnoremap qwer :call BgToggleSol()<cr>
 
 " ««««««  Paste in insert mode without having to worry about set paste  »»»»»»
 "=============================================================================
