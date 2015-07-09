@@ -18,7 +18,6 @@ nnoremap qwer :call BgToggleSol()<cr>
 " ««««««  Paste in insert mode without having to worry about set paste  »»»»»»
 "=============================================================================
 
-
 if &term =~ "xterm.*"
     let &t_ti = &t_ti . "\e[?2004h"
     let &t_te = "\e[?2004l" . &t_te
@@ -115,10 +114,9 @@ nnoremap <leader>' viw<esc>a'<esc>hbi'<esc>lel
 " ««««««  Movement Mappings  »»»»»»
 "==================================
 
-"Doing stuff inside parens
+"Doing stuff inside parentheses
 onoremap p i(
 onoremap in( :<c-u>normal! f(vi(<cr>
-"if (x < y)
 
 " ««««««  Basic Stuff  »»»»»»
 "============================
@@ -143,6 +141,14 @@ iabbrev vltr vector<LL>::iterator
 iabbrev lltr list<LL>::iterator
 iabbrev sitr set<int>::iterator
 iabbrev sltr set<LL>::iterator
+iabbrev miitr map<int, int>::iterator
+iabbrev miltr map<int, LL>::iterator
+iabbrev mlitr map<LL, int>::iterator
+iabbrev mlltr map<LL, LL>::iterator
+iabbrev mistr map<int, string>::iterator
+iabbrev msitr map<string, int>::iterator
+iabbrev msstr map<string, string>::iterator
+iabbrev msltr map<string, LL>::iterator
 
 "General
 iabbrev mygmail ankitsultana@gmail.com
