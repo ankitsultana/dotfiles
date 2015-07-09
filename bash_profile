@@ -14,20 +14,24 @@ gitupdate() {
 echo "gitupdate"
 
 updvim() {
+	local curr_path="$(pwd)"
 	cp ~/.vimrc ~/GitHub/Dotfiles/vimrc
 	cd ~/GitHub/Dotfiles/
 	git add vimrc
 	git commit -m "Automated Update"
 	git push origin master
+	cd $curr_path
 }
 echo "updvim"
 
 updsh() {
+	local curr_path="$(pwd)"
 	cp ~/.bash_profile ~/GitHub/Dotfiles/bash_profile
 	cd ~/GitHub/Dotfiles/
 	git add bash_profile
 	git commit -m "Automated Update"
 	git push origin master
+	cd $curr_path
 }
 echo "updsh"
 
