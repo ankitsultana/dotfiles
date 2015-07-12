@@ -2,6 +2,9 @@ execute pathogen#infect()
 
 colorscheme solarized
 
+"set foldmethod=indent
+set colorcolumn=80
+
 " ««««««  Toggle color scheme using a mapping  »»»»»»
 "====================================================
 
@@ -41,7 +44,6 @@ let mapleader=","
 "====================================================
 
 if has('gui_running')
-	colorscheme molokai
 	set background=dark
 else
 	set background=dark
@@ -136,19 +138,7 @@ set clipboard=unnamed
 
 "c++ stuff
 iabbrev vitr vector<int>::iterator
-iabbrev litr list<int>::iterator
 iabbrev vltr vector<LL>::iterator
-iabbrev lltr list<LL>::iterator
-iabbrev sitr set<int>::iterator
-iabbrev sltr set<LL>::iterator
-iabbrev miitr map<int, int>::iterator
-iabbrev miltr map<int, LL>::iterator
-iabbrev mlitr map<LL, int>::iterator
-iabbrev mlltr map<LL, LL>::iterator
-iabbrev mistr map<int, string>::iterator
-iabbrev msitr map<string, int>::iterator
-iabbrev msstr map<string, string>::iterator
-iabbrev msltr map<string, LL>::iterator
 
 "General
 iabbrev mygmail ankitsultana@gmail.com
