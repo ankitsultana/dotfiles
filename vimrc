@@ -2,7 +2,6 @@ execute pathogen#infect()
 
 colorscheme solarized
 
-"set foldmethod=indent
 set colorcolumn=160
 
 " ««««««  Toggle color scheme using a mapping  »»»»»»
