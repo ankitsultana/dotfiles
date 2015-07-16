@@ -3,7 +3,7 @@ execute pathogen#infect()
 colorscheme solarized
 
 "set foldmethod=indent
-set colorcolumn=80
+set colorcolumn=160
 
 " ««««««  Toggle color scheme using a mapping  »»»»»»
 "====================================================
@@ -90,6 +90,10 @@ augroup END
 
 " ««««««  Awesome and Non Conventional Mappings  »»»»»»
 "======================================================
+
+"Ditch Relative line numbers.. To jump to say x-th line.. in normal mode do:
+"		»» 	123<cr>
+nnoremap <cr> G
 
 "Switch between split panes in normal mode using Backspace
 nnoremap <bs> <c-w>w
@@ -181,7 +185,7 @@ set pastetoggle=<F2>
 
 "Line numbers ought to be there
 set ruler
-set relativenumber
+set number
 
 
 "Incremental search is good
