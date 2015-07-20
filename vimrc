@@ -43,9 +43,9 @@ let mapleader=","
 "====================================================
 
 if has('gui_running')
-	set background=dark
+	set background=light
 else
-	set background=dark
+	set background=light
 endif
 
 " ««««««  Spell check stuff  »»»»»»
@@ -138,15 +138,6 @@ set clipboard=unnamed
 
 " ««««««  Abbreviations  »»»»»»
 "==============================
-
-"c++ stuff
-iabbrev vitr vector<int>::iterator
-iabbrev vltr vector<LL>::iterator
-
-"General
-iabbrev mygmail ankitsultana@gmail.com
-
-"Sample text lorem ipsum dolor
 
 " ««««««  SETTERS  »»»»»»
 "========================
