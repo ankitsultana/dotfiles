@@ -4,6 +4,13 @@ colorscheme solarized
 
 set colorcolumn=160
 
+set backspace=indent,eol,start
+
+"Beta mode mapping
+"==================
+
+inoremap {<CR> {<CR>  <CR>}<up><right>
+
 " ««««««  Toggle color scheme using a mapping  »»»»»»
 "====================================================
 
@@ -45,7 +52,7 @@ let mapleader=","
 if has('gui_running')
 	set background=light
 else
-	set background=light
+	set background=dark
 endif
 
 " ««««««  Spell check stuff  »»»»»»
@@ -169,14 +176,15 @@ set shiftwidth=2
 "Indentation stuff
 set smarttab
 set autoindent
+set smartindent
 
 "Paste mode can be enabled using F2
 set pastetoggle=<F2>
 
 "Line numbers ought to be there
 set ruler
+set relativenumber
 set number
-
 
 "Incremental search is good
 set incsearch
