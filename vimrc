@@ -6,6 +6,31 @@ set colorcolumn=160
 
 set backspace=indent,eol,start
 
+"Use tab for auto-complete
+"=========================
+"function! Tab_Or_Complete()
+  "if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+    "return "\<C-N>"
+  "else
+    "return "\<Tab>"
+  "endif
+"endfunction
+"inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+"set dictionary="/usr/dict/words"
+
+"Use j and k to traverse through auto-complete suggestions
+"=========================================================
+inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
+inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
+
+"Compiling c++ in one click
+"======================
+
+set makeprg=g++\ -o\ \"%:p:r\"\ \"%:p\"
+map <F9> :w<CR>:!clear<CR>:make<CR>
+inoremap <F9> <ESC>:w<CR>:!clear<CR>:make<CR>
+map <F5> :!clear<CR>:!%:p:r<CR>
+
 "Beta mode mapping
 "==================
 
@@ -50,9 +75,9 @@ let mapleader=","
 "====================================================
 
 if has('gui_running')
-	set background=light
-else
 	set background=dark
+else
+	set background=light
 endif
 
 " ««««««  Spell check stuff  »»»»»»
