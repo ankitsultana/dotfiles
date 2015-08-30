@@ -195,8 +195,8 @@ set showcmd
 set laststatus=2
 
 "Setting tab to 2 spaces
-set tabstop=2
-set shiftwidth=2
+set tabstop=4
+set shiftwidth=4
 
 "Indentation stuff
 set smarttab
