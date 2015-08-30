@@ -12,6 +12,17 @@ RPROMPT="%F{cyan} robbyrussell %f%F{red} %W %f"
 
 #========== Awesome stuff below ===========#
 
+# Self Explanatory
+alias whichgitbranch="git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3"
+echo 'whichgitbranch'
+
+# A touch of Naruto
+almightypush() {
+	local curr_branch="$(whichgitbranch)"
+	git push origin $curr_branch
+	echo $curr_branch
+}
+
 gitupdate() {
 	git add $1
 	git commit -m "Update"
@@ -116,10 +127,6 @@ echo 'gotospoj'
 
 alias gotoimpl='gotospoj; cd ../Implementations'
 echo 'gotoimpl'
-
-#A touch of Naruto
-alias almighty_push='git push origin master'
-echo 'almighty_push'
 
 #And again
 alias universal_pull='git pull'
