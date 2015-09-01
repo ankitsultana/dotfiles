@@ -12,6 +12,24 @@ RPROMPT="%F{cyan} robbyrussell %f%F{red} %W %f"
 
 #========== Awesome stuff below ===========#
 
+# When programming for say a codeforces contest
+# Store the input files as 1 2 3 (without extension)
+# Then compile the source code.. and run it by typing
+# <run_tests 3> #if you want to run the code for 3 input files
+run_tests() {
+	local i=1
+	while [ $i != $1 ]; do
+		./a.out < $i
+		i=$((i+1))
+	done
+	./a.out < $i
+}
+
+# Change iTerm2 color scheme from Solarized Dark to Solarized Light
+
+alias Dark="echo -e \"\033]50;SetProfile=SolDark\a\""
+alias Light="echo -e \"\033]50;SetProfile=SolLight\a\""
+
 # Self Explanatory
 alias whichgitbranch="git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3"
 echo 'whichgitbranch'
