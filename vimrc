@@ -8,15 +8,15 @@ set backspace=indent,eol,start
 
 "Use tab for auto-complete
 "=========================
-"function! Tab_Or_Complete()
-  "if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
-    "return "\<C-N>"
-  "else
-    "return "\<Tab>"
-  "endif
-"endfunction
-"inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
-"set dictionary="/usr/dict/words"
+function! Tab_Or_Complete()
+  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+    return "\<C-N>"
+  else
+    return "\<Tab>"
+  endif
+endfunction
+inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+set dictionary="/usr/dict/words"
 
 "Use j and k to traverse through auto-complete suggestions
 "=========================================================
@@ -77,7 +77,7 @@ let mapleader=","
 if has('gui_running')
 	set background=dark
 else
-	set background=light
+	set background=dark
 endif
 
 " ««««««  Spell check stuff  »»»»»»
