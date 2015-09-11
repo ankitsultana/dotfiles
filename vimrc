@@ -6,6 +6,25 @@ set colorcolumn=160
 
 set backspace=indent,eol,start
 
+"Competitive Programming
+"=======================
+
+iabbrev factorial 
+\<CR>LL fact[MAXN] = {0}, ifact[MAXN] = {0};
+\<CR>void preprocess()
+\<CR>{
+\<CR>fact[0] = 1;
+\<CR>REPc(i,1,MAXN-1){
+\<CR>fact[i] = (fact[i-1]*i)%mod;
+\<CR>}
+\<CR>ifact[MAXN-1] = modinv(fact[MAXN-1]);
+\<CR>for(LL i = MAXN-2; i > 0; i--){
+\<CR>ifact[i] = (ifact[i+1]*(i+1))%mod;
+\<CR>}
+\<CR>assert((fact[2]*ifact[2])%mod == 1);
+\<CR>}
+\<Esc>Vjjd
+
 "Use tab for auto-complete
 "=========================
 function! Tab_Or_Complete()
@@ -77,7 +96,7 @@ let mapleader=","
 if has('gui_running')
 	set background=dark
 else
-	set background=dark
+	set background=light
 endif
 
 " ««««««  Spell check stuff  »»»»»»
