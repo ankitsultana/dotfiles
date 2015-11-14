@@ -6,6 +6,14 @@ set colorcolumn=160
 
 set backspace=indent,eol,start
 
+" ««««««  Standard Javascript »»»»»»
+"==================================
+
+let g:syntastic_javascript_checkers = ['standard']
+autocmd FileType javascript set tabstop=2
+autocmd FileType javascript set expandtab
+autocmd FileType javascript retab
+
 "Use tab for auto-complete
 "=========================
 function! Tab_Or_Complete()
