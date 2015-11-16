@@ -7,6 +7,7 @@ set colorcolumn=160
 set backspace=indent,eol,start
 
 " ««««««  Standard Javascript »»»»»»
+" Check http://github.com/feross/standard
 "==================================
 
 let g:syntastic_javascript_checkers = ['standard']
