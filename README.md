@@ -61,20 +61,20 @@ A snapshot of vim-airline with Solarized Light:
   git submodule update
   ```
 
-###Step 4: Move and rename vim directory
+###Step 4: Move vim directory
 
   In terminal type:
   
   ```
-  mv ~/Dotfiles/vim ~/.vim
+  mv ~/Dotfiles/.vim ~/.vim
   ```
   
-###Step 5: Move and rename vimrc
+###Step 5: Move vimrc
 
   In terminal type:
   
   ```
-  mv ~/Dotfiles/vimrc ~/.vimrc
+  mv ~/Dotfiles/.vimrc ~/.vimrc
   ```
 
 ###Step 6: Install solarized for iTerm
