@@ -16,13 +16,13 @@ A snapshot of vim-airline with Solarized Light:
 **Note:** Before starting, remove any existing ```.vim``` or ```vim``` directory from your home directory and 
 ```.vimrc``` file from your home directory.
 
-##STEPS
+##STEPS Overview
 
  1. Remove existing ```.vim``` or ```vim``` directory and ```.vimrc``` from your home directory.
  2. Install powerline fonts
  3. Clone this repo in your home directory
- 4. Move ```vim``` directory from Dotfiles to your home directory, rename it to ```.vim```
- 5. Move ```vimrc``` from Dotfiles to your home directory and rename it to ```.vimrc```
+ 4. Move ```.vim``` directory from Dotfiles to your home directory
+ 5. Move ```.vimrc``` from Dotfiles to your home directory
  6. Install solarized for iTerm
  7. Change settings in iTerm Preferences
  8. Done!
