@@ -12,6 +12,17 @@ RPROMPT="%F{cyan} robbyrussell %f%F{red} %W %f"
 
 #========== Awesome stuff below ===========#
 
+# Note: Not consistent with run_tests()
+# For compiling a cc/cpp file 
+# and naming its output file with the same 
+# name as the original file
+compile_cpp() {
+	local output_name=`expr "$1" : '^\([0-9A-Za-z]*\)'`
+	echo "Compiling file: $1"
+	clang++ -std=c++11 $1 -o "_$output_name"
+	echo "Compiled to   : _$output_name"
+}
+
 # When programming for say a codeforces contest
 # Store the input files as 1 2 3 (without extension)
 # Then compile the source code.. and run it by typing
