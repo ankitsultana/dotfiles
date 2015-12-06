@@ -13,6 +13,7 @@ set backspace=indent,eol,start
 let g:syntastic_javascript_checkers = ['standard']
 autocmd FileType javascript set tabstop=2
 autocmd FileType javascript set expandtab
+autocmd FileType javascript set shiftwidth=2
 autocmd FileType javascript retab
 
 "Use tab for auto-complete
