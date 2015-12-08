@@ -40,9 +40,6 @@
 [submodule "vim/bundle/vim-snippets"]
 	path = vim/bundle/vim-snippets
 	url = https://github.com/honza/vim-snippets
-[submodule "oh-my-zsh"]
-	path = oh-my-zsh
-	url = https://github.com/robbyrussell/oh-my-zsh.git
 [submodule "vim/bundle/vim-javascript"]
 	path = vim/bundle/vim-javascript
 	url = https://github.com/pangloss/vim-javascript.git
