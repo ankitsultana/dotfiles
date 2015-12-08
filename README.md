@@ -21,11 +21,10 @@ A snapshot of vim-airline with Solarized Light:
  1. Remove existing ```.vim``` or ```vim``` directory and ```.vimrc``` from your home directory.
  2. Install powerline fonts
  3. Clone this repo in your home directory
- 4. Move ```.vim``` directory from Dotfiles to your home directory
- 5. Move ```.vimrc``` from Dotfiles to your home directory
- 6. Install solarized for iTerm
- 7. Change settings in iTerm Preferences
- 8. Done!
+ 4. Move required files. More about this below.
+ 5. Install solarized for iTerm
+ 6. Change settings in iTerm Preferences
+ 7. Done!
 
 ###Step 1: Remove existing files
   
@@ -61,23 +60,16 @@ A snapshot of vim-airline with Solarized Light:
   git submodule update
   ```
 
-###Step 4: Move vim directory
+###Step 4: Move Required files
 
-  In terminal type:
-  
-  ```
-  mv ~/Dotfiles/.vim ~/.vim
-  ```
-  
-###Step 5: Move vimrc
+If you want my *vim* settings only, you need to move `.vimrc` and `.vim` to your *Home Directory*. 
 
-  In terminal type:
-  
-  ```
-  mv ~/Dotfiles/.vimrc ~/.vimrc
-  ```
+If you want my *zsh* settings only, move `.zshrc`, `.zshrc-e` and `.zsh-update` to your *Home Directory*. You might have to install [zsh](https://github.com/robbyrussell/oh-my-zsh) if you don't have it already.
 
-###Step 6: Install solarized for iTerm
+If you want my *bash* settings, move `.bash_profile` to your *Home Directory*.
+
+
+###Step 5: Install solarized for iTerm
  
   Clone solarized in your home directory from [here](https://github.com/altercation/solarized).
   
@@ -85,11 +77,11 @@ A snapshot of vim-airline with Solarized Light:
   
   Finally select the one you like.
 
-###Step 7: Change settings in iTerm 
+###Step 6: Change settings in iTerm 
 
   Open up ```iTerm``` go to ```Preferences -> Profiles -> Text``` and ```change font``` for both ```Regular``` and ```Non-ASCII```, to ```18pt Meslo LG S Regular for Powerline```.
   
-###Step 8:
+###Step 7:
   
   Restart iTerm and type vim. 
   
