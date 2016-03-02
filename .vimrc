@@ -110,38 +110,12 @@ function! HashingTemplate()
 	echom "Work in progress, Truth is I am too lazy"
 endfunction
 
-" «««««««  Commenting Code according to file type  »»»»»»
-"========================================================
-
-augroup comment
-	autocmd FileType python nnoremap <buffer> <leader>c mm^i#<esc>`ml
-	autocmd FileType python nnoremap <buffer> <leader>C mm^vd`mh
-
-	autocmd FileType javascript nnoremap <buffer> <leader>c mm^i//<esc>`mll
-	autocmd FileType javascript nnoremap <buffer> <leader>C mm^vld`mhh
-
-	autocmd FileType cpp nnoremap <buffer> <leader>c mm^i//<esc>`mll
-	autocmd FileType cpp nnoremap <buffer> <leader>C mm^vld`mhh
-
-	autocmd FileType vim nnoremap <buffer> <leader>c mm^i"<esc>`ml
-	autocmd FileType vim nnoremap <buffer> <leader>C mm^vd<esc>`mh
-
-	autocmd FileType ruby nnoremap <buffer> <leader>c mm^i#<esc>`ml
-	autocmd FileType ruby nnoremap <buffer> <leader>C mm^vd`mh
-augroup END
-
 " ««««««  Awesome and Non Conventional Mappings  »»»»»»
 "======================================================
 
-"Ditch Relative line numbers.. To jump to say x-th line.. in normal mode do:
-"		»» 	123<cr>
-nnoremap <cr> G
-
 "Switch between split panes in normal mode using Backspace
-nnoremap <bs> <c-w>w
-
-"Type asd in insert mode to go to normal mode.. 
-inoremap asd <Esc>	
+nnoremap <bs> <c-w>W
+nnoremap <Tab> <c-w>w
 
 "Center in on the line where the search element is found
 nnoremap N Nzz						
@@ -247,17 +221,5 @@ vno <down> <Nop>
 vno <left> <Nop>
 vno <up> <Nop>
 
-"	««««««		Custom Mappings(Harmless)			»»»»»»
-"===========================================
-
-"general mappings
-nmap <C-Tab> :tabnext<CR>
-nmap <C-S-Tab> :tabprevious<CR>
-map <C-S-Tab> :tabprevious<CR>
-map <C-Tab> :tabnext<CR>
-imap <C-S-Tab> <ESC> :tabprevious<CR>
-imap <C-Tab> <ESC> :tabnext<CR>
-noremap <F7> :set expandtab!<CR>
-
-"Rarely used stuff
-nmap gO O<ESC>j
+" «««««« Custom Mappings(TBD) »»»»»»
+"===================================
