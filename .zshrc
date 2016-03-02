@@ -11,18 +11,6 @@ autoload -U colors && colors
 RPROMPT="%F{cyan} robbyrussell %f%F{red} %W %f"
 
 #========== Awesome stuff below ===========#
-
-# Note: Not consistent with run_tests()
-# For compiling a cc/cpp file 
-# and naming its output file with the same 
-# name as the original file
-compile_cpp() {
-	local output_name=`expr "$1" : '^\([0-9A-Za-z]*\)'`
-	echo "Compiling file: $1"
-	clang++ -std=c++11 $1 -o "_$output_name"
-	echo "Compiled to   : _$output_name"
-}
-
 # When programming for say a codeforces contest
 # Store the input files as 1 2 3 (without extension)
 # Then compile the source code.. and run it by typing
@@ -37,6 +25,8 @@ run_tests() {
 }
 
 # Change iTerm2 color scheme from Solarized Dark to Solarized Light
+# Note: You need to create your own profile, Like SolDark/Light in the
+#       example below
 
 alias Dark="echo -e \"\033]50;SetProfile=SolDark\a\""
 alias Light="echo -e \"\033]50;SetProfile=SolLight\a\""
@@ -101,21 +91,8 @@ submit() {
 }
 echo 'submit'
 
-dress() {
-	if [ -e $1 ] 
-	then
-		echo "File Already exists!!"
-		read T
-		vim $1
-	else	
-		cp ~/.template.cc $1
-		vim $1
-	fi
-}
-echo 'dress'
-
-
-shortdress() {
+# Allows me to use a template for a new C++ file
+templar() {
 	if [ -e $1 ] 
 	then
 		echo "File Already exists!!"
@@ -126,7 +103,7 @@ shortdress() {
 		vim $1
 	fi
 }
-echo 'shortdress'
+echo 'templar'
 
 
 tmate() {
