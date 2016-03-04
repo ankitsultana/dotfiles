@@ -1,21 +1,133 @@
 execute pathogen#infect()
 
-colorscheme solarized
+let g:CommandTMaxFiles=50000
+let g:CommandTAlwaysShowDotFiles=1
+let g:CommandTTraverseSCM = 'pwd'
 
-set colorcolumn=160
+
+"PowerLine related stuff
+" let g:airline_theme='onedark'
+let g:airline#extensions#tabline#enabled=1
+let g:airline_powerline_fonts=1
+set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h14
+
+" ««««««  Set colorscheme related stuff »»»»»»
+"=============================================
+
+set t_Co=16
+colorscheme onedark
+let g:onedark_termcolors=16
+let g:airline_theme='onedark'
+set background=dark
+
+set colorcolumn=80
 
 set backspace=indent,eol,start
 
-" ««««««  Standard Javascript »»»»»»
-" Check http://github.com/feross/standard
-"==================================
+autocmd BufNewFile *.html :r ~/.templates/HTML.html
 
+" Syntastic Stuff
+"=======================
+
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
 let g:syntastic_javascript_checkers = ['standard']
-autocmd FileType javascript set tabstop=2
-autocmd FileType javascript set expandtab
-autocmd FileType javascript set shiftwidth=2
-autocmd FileType javascript retab
 
+"Competitive Programming
+"=======================
+
+iabbrev MSB 
+			\<Esc>:r ~/.templates/MSB<CR>
+
+iabbrev LSB 
+			\<Esc>:r ~/.templates/LSB<CR>
+
+iabbrev GOSPERSHACK 
+			\<Esc>:r ~/.templates/GosperHack<CR>
+
+iabbrev LIS 
+			\<Esc>:r ~/.templates/LIS<CR>
+
+iabbrev BRIDGETREE 
+			\<Esc>:r ~/.templates/BridgeTree<CR>
+
+iabbrev CONVEXHULLTRICK 
+			\<Esc>:r ~/.templates/ConvexHullTrick.cc<CR>
+
+iabbrev LOWESTPRIMES 
+			\<Esc>:r ~/.templates/LowestPrimes<CR>
+
+iabbrev UNIONFIND 
+			\<Esc>:r ~/.templates/UnionFind<CR>
+
+iabbrev FACTORIAL 
+			\<Esc>:r ~/.templates/Factorial<CR>
+
+iabbrev DINIC 
+			\<Esc>:r ~/.templates/Dinic<CR>
+
+iabbrev SEGTREE 
+			\<Esc>:r ~/.templates/SegTree<CR>
+
+iabbrev LOWESTCA 
+			\<Esc>:r ~/.templates/LCA<CR>
+
+iabbrev PHIRANGE 
+			\<Esc>:r ~/.templates/PhiRange<CR>
+
+iabbrev SQUAREROOTTRICK 
+			\<Esc>:r ~/.templates/SquareRootTrick<CR>
+
+iabbrev TEMPLATE1 
+			\<Esc>:r ~/.template.cc<CR>
+
+iabbrev TEMPLATE2 
+			\<Esc>:r ~/.template2.cc<CR>
+
+iabbrev HEAVYLIGHT 
+			\<Esc>:r ~/.templates/HeavyLight<CR>
+
+iabbrev FINDCYCLE 
+			\<Esc>:r ~/.templates/FindCycle<CR>
+
+iabbrev TOPSORT 
+			\<Esc>:r ~/.templates/TopSort<CR>
+
+iabbrev FastFT 
+			\<Esc>:r ~/.templates/FFT<CR>
+
+iabbrev BRIDGE 
+			\<Esc>:r ~/.templates/Bridge<CR>
+
+iabbrev ArticulationPOINTS 
+			\<Esc>:r ~/.templates/ArticulationPoints<CR>
+
+iabbrev STIRLINGSECOND 
+			\<Esc>:r ~/.templates/StirlingSecond<CR>
+
+iabbrev BELL 
+			\<Esc>:r ~/.templates/Bell<CR>
+
+iabbrev NCR 
+			\<Esc>:r ~/.templates/nCr<CR>
+
+iabbrev TOSTRING 
+			\<Esc>:r ~/.templates/ToString<CR>
+
+iabbrev MATRIXMULTIPLICATION 
+			\<Esc>:r ~/.templates/MatrixMultiplication<CR>
+
+iabbrev KOSARAJU 
+			\<Esc>:r ~/.templates/Kosaraju<CR>
+
+iabbrev PRIMESIEVE 
+			\<Esc>:r ~/.templates/SieveEratosthenes<CR>
+
+iabbrev DIJKSTRA 
+			\<Esc>:r ~/.templates/Dijkstra<CR>
+
+iabbrev CATALAN 
+			\<Esc>:r ~/.templates/Catalan<CR>
 "Use tab for auto-complete
 "=========================
 function! Tab_Or_Complete()
@@ -41,7 +153,7 @@ map <F9> :w<CR>:!clear<CR>:make<CR>
 inoremap <F9> <ESC>:w<CR>:!clear<CR>:make<CR>
 map <F5> :!clear<CR>:!%:p:r<CR>
 
-" Smart Brackets Mapping
+"Beta mode mapping
 "==================
 
 inoremap {<CR> {<CR>  <CR>}<up><right>
@@ -81,15 +193,6 @@ endif
 
 let mapleader=","
 
-" ««««««  Change anyone to dark as you prefer  »»»»»»
-"====================================================
-
-if has('gui_running')
-	set background=dark
-else
-	set background=light
-endif
-
 " ««««««  Spell check stuff  »»»»»»
 "==================================
 
@@ -98,6 +201,14 @@ endif
 
 autocmd FileType text set spell spelllang=en_us
 
+" ««««««  Standard Javascript »»»»»»
+"==================================
+
+autocmd FileType javascript set tabstop=2
+autocmd FileType javascript set expandtab
+autocmd FileType javascript set shiftwidth=2
+autocmd FileType javascript retab
+
 nnoremap <leader>sp :call FixLastSpellingError()<cr>
 
 "Function to wrap things up
@@ -105,23 +216,25 @@ function! FixLastSpellingError()
 	normal! mm[s1z=`m
 endfunction
 
-"get template for hashing questions
-function! HashingTemplate()
-	echom "Work in progress, Truth is I am too lazy"
-endfunction
-
 " ««««««  Awesome and Non Conventional Mappings  »»»»»»
 "======================================================
+
+"Ditch Relative line numbers.. To jump to say x-th line.. in normal mode do:
+"		»» 	123<cr>
+nnoremap <cr> G
 
 "Switch between split panes in normal mode using Backspace
 nnoremap <bs> <c-w>W
 nnoremap <Tab> <c-w>w
 
+"Type asd in insert mode to go to normal mode.. 
+inoremap asd <Esc>	
+
 "Center in on the line where the search element is found
-nnoremap N Nzz						
+" nnoremap N Nzz						
 
 "Same
-nnoremap n nzz						
+" nnoremap n nzz						
 
 "Open vimrc in a split to quickly make changes
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -203,23 +316,43 @@ set incsearch
 set hlsearch
 set title
 
-"PowerLine related stuff
-let g:airline#extensions#tabline#enabled=1
-let g:airline_powerline_fonts=1
-set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h14
-
 "Unmap the arrow keys
-no <down> ddp
-no <left> <Nop>
-no <right> <Nop>
-no <up> ddkP
-ino <down> <Nop>
-ino <left> <Nop>
-ino <right> <Nop>
-ino <up> <Nop>
-vno <down> <Nop>
-vno <left> <Nop>
-vno <up> <Nop>
+nnoremap <up> ddkP
+nnoremap <down> ddp
 
-" «««««« Custom Mappings(TBD) »»»»»»
-"===================================
+"	««««««		Custom Mappings(Harmless)			»»»»»»
+"===========================================
+
+"general mappings
+nmap <C-Tab> :tabnext<CR>
+nmap <C-S-Tab> :tabprevious<CR>
+map <C-S-Tab> :tabprevious<CR>
+map <C-Tab> :tabnext<CR>
+imap <C-S-Tab> <ESC> :tabprevious<CR>
+imap <C-Tab> <ESC> :tabnext<CR>
+noremap <F7> :set expandtab!<CR>
+
+"Rarely used stuff
+nmap gO O<ESC>j
+
+" Vim Airline Customization
+"==========================
+
+function! MyOverride()
+	let keys = ['b','k','2','d','c','r','a','d', 'l', 'e']
+	for k in keys
+		call airline#parts#define_text(k, k)
+	endfor
+	call airline#parts#define_accent('a', 'yellow')
+	call airline#parts#define_accent('b', 'yellow')
+	call airline#parts#define_accent('c', 'yellow')
+	call airline#parts#define_accent('d', 'yellow')
+	call airline#parts#define_accent('e', 'yellow')
+	call airline#parts#define_accent('r', 'yellow')
+	call airline#parts#define_accent('2', 'yellow')
+	call airline#parts#define_accent('k', 'yellow')
+	call airline#parts#define_accent('l', 'yellow')
+	let g:airline_section_a = airline#section#create(keys)
+	let g:airline_section_y = '%b'
+endfunction
+" autocmd VimEnter * call MyOverride()

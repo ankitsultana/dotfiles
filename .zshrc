@@ -1,16 +1,43 @@
 export ZSH=/Users/ankitsultana/.oh-my-zsh
+ONLINE='%{%F{green}%}◉'
+OFFLINE='%{%F{red}%}⦿'
+
+# Load colors
+autoload -U colors && colors
+function prompt_online() {  # Check Network Connection
+  if [[ -f ~/.offline ]]; then
+    echo $OFFLINE
+  else
+    echo $ONLINE
+  fi
+}
+
+function battery() {        # Check battery status
+	python ~/.utilities/mybattery.py
+}
+
+setopt promptsubst
+bat=$(battery)
+DUMMY='%{%F{green}%}'	# Set foreground color
+RPS1='$(battery) $(prompt_online) $DUMMY'
+
+RUBY_BUILD_CACHE_PATH="/Users/ankitsultana/.rbenv/cache"
+
+export EDITOR=vim
+export CLICOLOR=1
+export LSCOLORS=ExFxCxDxBxegedabagacad
+export PATH=$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin
+export PYTHONPATH=$PYTHONPATH:/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/PyObjC
 
 if [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
-	ZSH_THEME="robbyrussell"
-	echo "$TERM_PROGRAM"
+	ZSH_THEME="ankitsultana"
 else
-	ZSH_THEME="robbyrussell"
+	ZSH_THEME="ankitsultana"
 fi
 
-autoload -U colors && colors
-RPROMPT="%F{cyan} robbyrussell %f%F{red} %W %f"
-
 #========== Awesome stuff below ===========#
+
+alias g++='clang++ -std=c++11'
 # When programming for say a codeforces contest
 # Store the input files as 1 2 3 (without extension)
 # Then compile the source code.. and run it by typing
@@ -24,13 +51,6 @@ run_tests() {
 	./a.out < $i
 }
 
-# Change iTerm2 color scheme from Solarized Dark to Solarized Light
-# Note: You need to create your own profile, Like SolDark/Light in the
-#       example below
-
-alias Dark="echo -e \"\033]50;SetProfile=SolDark\a\""
-alias Light="echo -e \"\033]50;SetProfile=SolLight\a\""
-
 # Self Explanatory
 alias whichgitbranch="git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3"
 echo 'whichgitbranch'
@@ -41,57 +61,13 @@ almightypush() {
 	git push origin $curr_branch
 	echo $curr_branch
 }
-
-gitupdate() {
-	git add $1
-	git commit -m "Update"
-	if [ ! -z "$2" ]; then
-		git push origin $2
-	else
-		git push origin master
-	fi
-}
-echo "gitupdate"
-
-updvim() {
-	local curr_path="$(pwd)"
-	cp ~/.vimrc ~/GitHub/Dotfiles/vimrc
-	cd ~/GitHub/Dotfiles/
-	git add vimrc
-	git commit -m "Automated Update"
-	git push origin master
-	cd $curr_path
-}
-echo "updvim"
-
-updsh() {
-	local curr_path="$(pwd)"
-	cp ~/.bash_profile ~/GitHub/Dotfiles/bash_profile
-	cd ~/GitHub/Dotfiles/
-	git add bash_profile
-	git commit -m "Automated Update"
-	git push origin master
-	cd $curr_path
-}
-echo "updsh"
-
-updzsh() {
-	local curr_path="${pwd}"
-	cp ~/.zshrc ~/GitHub/Dotfiles/zshrc
-	cd ~/GitHub/Dotfiles
-	git add zshrc
-	git commit -m "Automated Update"
-	git push origin master
-	cd $curr_path
-}
-echo "updzsh"
+echo 'almightypush'
 
 submit() {
 	cat $1 |pbcopy
 }
 echo 'submit'
 
-# Allows me to use a template for a new C++ file
 templar() {
 	if [ -e $1 ] 
 	then
@@ -119,14 +95,8 @@ echo 'subl'
 alias gotosentdex='gotoprogramming ; cd ./Python/sentdex'
 echo 'gotosentdex'
 
-alias gotoruby='gotospoj ; cd ../../Ruby/Spoj/'
-echo 'gotoruby'
-
 alias gotoprogramming='cd ~/Desktop/Desk/CS/Programming'
 echo 'gotoprogramming'
-
-alias py='python3'
-echo 'py -> python3'
 
 alias gotospoj='cd ~/Desktop/Desk/CS/Programming/Sport/C++/spoj/'
 echo 'gotospoj'
@@ -134,36 +104,16 @@ echo 'gotospoj'
 alias gotoimpl='gotospoj; cd ../Implementations'
 echo 'gotoimpl'
 
-#And again
-alias universal_pull='git pull'
-echo 'universal_pull'
-
-alias hidefiles='defaults write com.apple.finder AppleShowAllFiles NO'
-echo 'hidefiles'
-
-alias showfiles='defaults write com.apple.finder AppleShowAllFiles YES'
-echo 'showfiles'
-
-# Setting PATH for Python 3.4
-# The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:${PATH}"
-export PATH
-if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
-
-# Setting PATH for Python 2.7
-# The orginal version is saved in .bash_profile.pysave
-PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-export PATH
-
 plugins=(git)
 DEFAULT_USER=`whoami`
 #plugins=(rails sublime web-search chucknorris github rand-quote git ruby)
 
-# User configuration
-
+# Set path for tex, python 2, python 3
 export PATH="/Library/Frameworks/Python.framework/Versions/3.4/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/texbin:/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
-# export MANPATH="/usr/local/man:$MANPATH"
 
-source $ZSH/oh-my-zsh.sh
 alias gotochef=/Users/ankitsultana/Desktop/Desk/CS/Programming/Sport/C++/codechef
 alias gotoforces=/Users/ankitsultana/Desktop/Desk/CS/Programming/Sport/C++/CODEFORCES
+export PATH="$HOME/.rbenv/bin:$PATH"
+
+source $ZSH/oh-my-zsh.sh
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
