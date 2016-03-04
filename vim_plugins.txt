@@ -1,0 +1,12 @@
+https://github.com/scrooloose/nerdtree.git
+https://github.com/vim-airline/vim-airline.git
+https://github.com/chriskempson/base16-vim.git
+https://github.com/wincent/command-t.git
+https://github.com/joshdick/onedark.vim.git
+https://github.com/scrooloose/syntastic.git
+https://github.com/altercation/vim-colors-solarized.git
+https://github.com/octol/vim-cpp-enhanced-highlight.git
+https://github.com/tpope/vim-fugitive.git
+https://github.com/airblade/vim-gitgutter.git
+https://github.com/tpope/vim-surround.git
+https://github.com/othree/yajs.vim.git
