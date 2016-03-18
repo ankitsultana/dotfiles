@@ -2,3 +2,6 @@
 	path = utilities/subtitle-downloader
 	url = https://github.com/bk2dcradle/subtitle-downloader
 	branch = master
+[submodule "utilities/tools-osx"]
+	path = utilities/tools-osx
+	url = https://github.com/morgant/tools-osx.git
