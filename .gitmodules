@@ -1,0 +1,4 @@
+[submodule "utilities/subtitle-downloader"]
+	path = utilities/subtitle-downloader
+	url = https://github.com/bk2dcradle/subtitle-downloader
+	branch = master
