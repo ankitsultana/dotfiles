@@ -53,7 +53,6 @@ run_tests() {
 
 # Self Explanatory
 alias whichgitbranch="git symbolic-ref HEAD 2>/dev/null | cut -d"/" -f 3"
-echo 'whichgitbranch'
 
 # A touch of Naruto
 almightypush() {
@@ -61,12 +60,10 @@ almightypush() {
 	git push origin $curr_branch
 	echo $curr_branch
 }
-echo 'almightypush'
 
 submit() {
 	cat $1 |pbcopy
 }
-echo 'submit'
 
 templar() {
 	if [ -e $1 ] 
@@ -79,30 +76,23 @@ templar() {
 		vim $1
 	fi
 }
-echo 'templar'
 
 
 tmate() {
   open $1 -a "TextMate"
 }
-echo 'tmate'
 
 subl() {
 	open $1 -a "Sublime Text"
 }
-echo 'subl'
 
 alias gotosentdex='gotoprogramming ; cd ./Python/sentdex'
-echo 'gotosentdex'
 
 alias gotoprogramming='cd ~/Desktop/Desk/CS/Programming'
-echo 'gotoprogramming'
 
 alias gotospoj='cd ~/Desktop/Desk/CS/Programming/Sport/C++/spoj/'
-echo 'gotospoj'
 
 alias gotoimpl='gotospoj; cd ../Implementations'
-echo 'gotoimpl'
 
 plugins=(git)
 DEFAULT_USER=`whoami`
@@ -117,3 +107,10 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 
 source $ZSH/oh-my-zsh.sh
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export NODE_PATH="/usr/local/lib/node_modules:/Users/ankitsultana/jpm:/Users/ankitsultana/jpm/node_modules"
+export PATH=/usr/local/lib/node_modules:$PATH
+export PATH=/Users/ankitsultana/.rbenv/shims:$PATH
+export PATH=/usr/local/bin/node:$PATH
+export PATH=/usr/local/share/npm/bin:$PATH
+
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh

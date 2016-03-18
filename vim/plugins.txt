@@ -1,0 +1,15 @@
+https://github.com/michaeljsmith/vim-indent-object ./bundle/vim-indent-object
+https://github.com/vim-scripts/argtextobj.vim ./bundle/argtextobj.vim
+https://github.com/bkad/CamelCaseMotion ./bundle/CamelCaseMotion
+https://github.com/joshdick/onedark.vim.git ./bundle/onedark.vim
+https://github.com/vim-airline/vim-airline.git ./bundle/vim-airline
+https://github.com/chriskempson/base16-vim.git ./bundle/base16-vim
+https://github.com/wincent/command-t.git ./bundle/command-t
+https://github.com/scrooloose/syntastic.git ./bundle/syntastic
+https://github.com/altercation/vim-colors-solarized.git ./bundle/vim-colors-solarized
+https://github.com/octol/vim-cpp-enhanced-highlight.git ./bundle/vim-cpp-enhanced-highlight
+https://github.com/tpope/vim-fugitive.git ./bundle/vim-fugitive
+https://github.com/airblade/vim-gitgutter.git ./bundle/vim-gitgutter
+https://github.com/tpope/vim-surround.git ./bundle/vim-surround
+https://github.com/othree/yajs.vim.git ./bundle/yajs.vim
+https://github.com/scrooloose/nerdtree.git ./bundle/nerdtree

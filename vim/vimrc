@@ -1,5 +1,9 @@
 execute pathogen#infect()
 
+map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
+\ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
+\ . synIDattr(synIDtrans(synID(line("."),col("."),1)),"name") . ">"<CR>
+
 let g:CommandTMaxFiles=50000
 let g:CommandTAlwaysShowDotFiles=1
 let g:CommandTTraverseSCM = 'pwd'
@@ -15,10 +19,10 @@ set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h14
 "=============================================
 
 set t_Co=16
-colorscheme onedark
 let g:onedark_termcolors=16
 let g:airline_theme='onedark'
 set background=dark
+colorscheme onedark
 
 set colorcolumn=80
 
@@ -200,6 +204,7 @@ let mapleader=","
 " If you want it ON for all file types
 
 autocmd FileType text set spell spelllang=en_us
+autocmd FileType markdown set spell spelllang=en_us
 
 " ««««««  Standard Javascript »»»»»»
 "==================================
@@ -356,3 +361,4 @@ function! MyOverride()
 	let g:airline_section_y = '%b'
 endfunction
 " autocmd VimEnter * call MyOverride()
+call camelcasemotion#CreateMotionMappings('<leader>')
