@@ -1,3 +1,6 @@
+echo "Initializing submodules"
+echo "======================="
+
 git submodule init
 for i in $(git submodule | sed -e 's/.* //'); do
     spath=$(git config -f .gitmodules --get submodule.$i.path)
@@ -8,3 +11,13 @@ for i in $(git submodule | sed -e 's/.* //'); do
 		git submodule update --init -- $spath
 	fi
 done
+
+echo "Installing vim plugins"
+echo "======================"
+chmod +x vim/install.h
+./install.sh
+
+echo "Installing zsh plugins"
+echo "======================"
+chmod +x zsh/install.h
+./install.h
