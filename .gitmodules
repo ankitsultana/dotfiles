@@ -5,3 +5,6 @@
 [submodule "utilities/tools-osx"]
 	path = utilities/tools-osx
 	url = https://github.com/morgant/tools-osx.git
+[submodule "iterm/colors/base16-iterm2"]
+	path = iterm/colors/base16-iterm2
+	url = https://github.com/chriskempson/base16-iterm2.git
