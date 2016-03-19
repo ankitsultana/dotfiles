@@ -45,11 +45,13 @@ function set_zsh_rprompt {
   fi
 }
 
-function precmd {
-  set_zsh_rprompt
-}
-
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}:: %{$fg[yellow]%}("
 ZSH_THEME_GIT_PROMPT_SUFFIX=")%{$reset_color%} "
 ZSH_THEME_GIT_PROMPT_CLEAN=""
 ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}*%{$fg[yellow]%}"
+
+# set_zsh_prompt is too slow, hence using Python !
+function precmd {
+  #set_zsh_rprompt
+	RPROMPT=$(python ~/.utilities/mybattery.py)
+}
