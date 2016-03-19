@@ -29,10 +29,10 @@ PROMPT+='%{$fg[red]%}└ $(prompt_online) $(git_prompt_info | sed "s/://g")'
 PROMPT+='%{$fg[red]%}%(!.#.»)%{$reset_color%} '
 
 function set_zsh_rprompt {
-	if [ $(pmset -g batt | grep -c 'AC Power') -ne 0 ]; then
-		RPROMPT='%{$fg[green]%}⚡'
-	else
-		RPROMPT='%{$fg[red]%}×'
+  if [ $(pmset -g batt | grep -c 'AC Power') -ne 0 ]; then
+    RPROMPT='%{$fg[green]%}⚡'
+  else
+    RPROMPT='%{$fg[red]%}×'
   fi
   RPROMPT+=' %{$fg[red]%}$(charge_value)#'
 }
