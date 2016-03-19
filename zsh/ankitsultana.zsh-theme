@@ -34,7 +34,7 @@ function set_zsh_rprompt {
   else
     RPROMPT='%{$fg[red]%}×'
   fi
-	if [ $(pmset -g batt | grep -c '[0-2][0-9]\%') -ne 0 ]
+  if [ $(pmset -g batt | grep -c '[0-2][0-9]\%') -ne 0 ]
   then
     RPROMPT+=' %{$fg[red]%}$(charge_value)#'
   elif [ $(pmset -g batt | grep -c '[3-6][0-9]\%') -ne 0 ]
@@ -53,5 +53,5 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}*%{$fg[yellow]%}"
 # set_zsh_prompt is too slow, hence using Python !
 function precmd {
   #set_zsh_rprompt
-	RPROMPT=$(python ~/.utilities/mybattery.py)
+  RPROMPT=$(python ~/.utilities/mybattery.py)
 }

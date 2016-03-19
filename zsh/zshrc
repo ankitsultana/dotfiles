@@ -1,14 +1,7 @@
 export ZSH=/Users/ankitsultana/.oh-my-zsh
 autoload -U colors && colors
 
-#function battery() {        # Check battery status
-#	python ~/.utilities/mybattery.py
-#}
-
 setopt promptsubst
-# bat=$(battery)
-# RPS1='$(battery) $(prompt_online) $DUMMY'
-
 RUBY_BUILD_CACHE_PATH="/Users/ankitsultana/.rbenv/cache"
 
 export EDITOR=vim

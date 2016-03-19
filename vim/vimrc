@@ -299,6 +299,7 @@ set laststatus=2
 
 "Setting tab to 2 spaces
 set tabstop=4
+set expandtab
 set shiftwidth=4
 
 "Indentation stuff
