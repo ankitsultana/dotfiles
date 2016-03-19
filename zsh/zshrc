@@ -82,7 +82,7 @@ alias gotospoj='cd ~/Desktop/Desk/CS/Programming/Sport/C++/spoj/'
 
 alias gotoimpl='gotospoj; cd ../Implementations'
 
-plugins=(git)
+plugins=(git github)
 DEFAULT_USER=`whoami`
 #plugins=(rails sublime web-search chucknorris github rand-quote git ruby)
 

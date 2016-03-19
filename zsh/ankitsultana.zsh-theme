@@ -25,7 +25,7 @@ local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 PROMPT='%{$fg[red]%}┌ %{$fg[red]%}$(virtualenv_info) %{$fg[blue]%}%~%{$reset_color%} ${return_code}
 '
 # Second line
-PROMPT+='%{$fg[red]%}└ $(prompt_online)$(git_prompt_info)'
+PROMPT+='%{$fg[red]%}└ $(prompt_online) $(git_prompt_info | sed "s/://g")'
 PROMPT+='%{$fg[red]%}%(!.#.»)%{$reset_color%} '
 
 function set_zsh_rprompt {
@@ -37,7 +37,7 @@ function set_zsh_rprompt {
   RPROMPT+=' %{$fg[red]%}$(charge_value)#'
 }
 
-precmd() {
+function precmd {
   set_zsh_rprompt
 }
 
