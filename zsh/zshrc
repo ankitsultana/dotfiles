@@ -1,25 +1,13 @@
 export ZSH=/Users/ankitsultana/.oh-my-zsh
-ONLINE='%{%F{green}%}◉'
-OFFLINE='%{%F{red}%}⦿'
-
-# Load colors
 autoload -U colors && colors
-function prompt_online() {  # Check Network Connection
-  if [[ -f ~/.offline ]]; then
-    echo $OFFLINE
-  else
-    echo $ONLINE
-  fi
-}
 
-function battery() {        # Check battery status
-	python ~/.utilities/mybattery.py
-}
+#function battery() {        # Check battery status
+#	python ~/.utilities/mybattery.py
+#}
 
 setopt promptsubst
-bat=$(battery)
-DUMMY='%{%F{green}%}'	# Set foreground color
-RPS1='$(battery) $(prompt_online) $DUMMY'
+# bat=$(battery)
+# RPS1='$(battery) $(prompt_online) $DUMMY'
 
 RUBY_BUILD_CACHE_PATH="/Users/ankitsultana/.rbenv/cache"
 
