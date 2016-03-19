@@ -34,7 +34,15 @@ function set_zsh_rprompt {
   else
     RPROMPT='%{$fg[red]%}×'
   fi
-  RPROMPT+=' %{$fg[red]%}$(charge_value)#'
+	if [ $(pmset -g batt | grep -c '[0-2][0-9]\%') -ne 0 ]
+  then
+    RPROMPT+=' %{$fg[red]%}$(charge_value)#'
+  elif [ $(pmset -g batt | grep -c '[3-6][0-9]\%') -ne 0 ]
+  then
+    RPROMPT+=' %{$fg[yellow]%}$(charge_value)#'
+  else
+    RPROMPT+=' %{$fg[green]%}$(charge_value)#'
+  fi
 }
 
 function precmd {
