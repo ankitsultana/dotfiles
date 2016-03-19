@@ -53,5 +53,7 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}*%{$fg[yellow]%}"
 # set_zsh_prompt is too slow, hence using Python !
 function precmd {
   #set_zsh_rprompt
-  RPROMPT=$(python ~/.utilities/mybattery.py)
+  if [ $(uname -s) = "Darwin" ]; then
+    RPROMPT=$(python ~/.utilities/mybattery.py)
+  fi
 }
