@@ -15,9 +15,9 @@ done
 echo "Installing vim plugins"
 echo "======================"
 chmod +x vim/install.h
-./install.sh
+vim/install.sh
 
 echo "Installing zsh plugins"
 echo "======================"
 chmod +x zsh/install.h
-./install.h
+zsh/install.h
