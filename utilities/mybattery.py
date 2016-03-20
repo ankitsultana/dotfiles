@@ -24,7 +24,7 @@ green = '%{%F{green}%}'
 red = '%{%F{red}%}'
 
 color = ''
-if charge_threshold >= 5 and charge_threshold < 7:
+if charge_threshold >= 5 and charge_threshold < 8:
     color = yellow
 elif charge_threshold <= 4:
     color = red
