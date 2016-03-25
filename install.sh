@@ -13,11 +13,25 @@ for i in $(git submodule | sed -e 's/.* //'); do
 done
 
 echo "Installing vim plugins"
-echo "======================"
-chmod +x vim/install.sh
-vim/install.sh
+echo "======================\n\n"
+cd vim
+echo "Installing Pathogen in vim/autoload"
+mkdir autoload
+curl -LSso autoload/pathogen.vim https://tpo.pe/pathogen.vim
+echo "Done!\n\n"
+echo "Cloning vim plugins"
+filename="plugins.txt"
+while read in; do
+	git clone $in
+	echo "\n======================================================\n"
+done < $filename
 
 echo "Installing zsh plugins"
-echo "======================"
-chmod +x zsh/install.sh
-zsh/install.sh
+echo "======================\n\n"
+cd ../zsh
+echo "Cloning zsh plugins"
+filename="plugins.txt"
+while read in; do
+	git clone $in
+	echo "\n======================================================\n"
+done < $filename
