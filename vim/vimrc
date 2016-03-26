@@ -40,101 +40,6 @@ autocmd BufNewFile *.html :r ~/.templates/HTML.html
 " let g:syntastic_auto_loc_list = 1
 let g:syntastic_javascript_checkers = ['standard']
 
-"Competitive Programming
-"=======================
-
-iabbrev MSB 
-			\<Esc>:r ~/.templates/MSB<CR>
-
-iabbrev LSB 
-			\<Esc>:r ~/.templates/LSB<CR>
-
-iabbrev GOSPERSHACK 
-			\<Esc>:r ~/.templates/GosperHack<CR>
-
-iabbrev LIS 
-			\<Esc>:r ~/.templates/LIS<CR>
-
-iabbrev BRIDGETREE 
-			\<Esc>:r ~/.templates/BridgeTree<CR>
-
-iabbrev CONVEXHULLTRICK 
-			\<Esc>:r ~/.templates/ConvexHullTrick.cc<CR>
-
-iabbrev LOWESTPRIMES 
-			\<Esc>:r ~/.templates/LowestPrimes<CR>
-
-iabbrev UNIONFIND 
-			\<Esc>:r ~/.templates/UnionFind<CR>
-
-iabbrev FACTORIAL 
-			\<Esc>:r ~/.templates/Factorial<CR>
-
-iabbrev DINIC 
-			\<Esc>:r ~/.templates/Dinic<CR>
-
-iabbrev SEGTREE 
-			\<Esc>:r ~/.templates/SegTree<CR>
-
-iabbrev LOWESTCA 
-			\<Esc>:r ~/.templates/LCA<CR>
-
-iabbrev PHIRANGE 
-			\<Esc>:r ~/.templates/PhiRange<CR>
-
-iabbrev SQUAREROOTTRICK 
-			\<Esc>:r ~/.templates/SquareRootTrick<CR>
-
-iabbrev TEMPLATE1 
-			\<Esc>:r ~/.template.cc<CR>
-
-iabbrev TEMPLATE2 
-			\<Esc>:r ~/.template2.cc<CR>
-
-iabbrev HEAVYLIGHT 
-			\<Esc>:r ~/.templates/HeavyLight<CR>
-
-iabbrev FINDCYCLE 
-			\<Esc>:r ~/.templates/FindCycle<CR>
-
-iabbrev TOPSORT 
-			\<Esc>:r ~/.templates/TopSort<CR>
-
-iabbrev FastFT 
-			\<Esc>:r ~/.templates/FFT<CR>
-
-iabbrev BRIDGE 
-			\<Esc>:r ~/.templates/Bridge<CR>
-
-iabbrev ArticulationPOINTS 
-			\<Esc>:r ~/.templates/ArticulationPoints<CR>
-
-iabbrev STIRLINGSECOND 
-			\<Esc>:r ~/.templates/StirlingSecond<CR>
-
-iabbrev BELL 
-			\<Esc>:r ~/.templates/Bell<CR>
-
-iabbrev NCR 
-			\<Esc>:r ~/.templates/nCr<CR>
-
-iabbrev TOSTRING 
-			\<Esc>:r ~/.templates/ToString<CR>
-
-iabbrev MATRIXMULTIPLICATION 
-			\<Esc>:r ~/.templates/MatrixMultiplication<CR>
-
-iabbrev KOSARAJU 
-			\<Esc>:r ~/.templates/Kosaraju<CR>
-
-iabbrev PRIMESIEVE 
-			\<Esc>:r ~/.templates/SieveEratosthenes<CR>
-
-iabbrev DIJKSTRA 
-			\<Esc>:r ~/.templates/Dijkstra<CR>
-
-iabbrev CATALAN 
-			\<Esc>:r ~/.templates/Catalan<CR>
 "Use tab for auto-complete
 "=========================
 function! Tab_Or_Complete()
@@ -163,7 +68,7 @@ map <F5> :!clear<CR>:!%:p:r<CR>
 "Beta mode mapping
 "==================
 
-inoremap {<CR> {<CR>  <CR>}<up><right>
+inoremap {<CR> {<CR>}<Esc>O
 
 " ««««««  Toggle color scheme using a mapping  »»»»»»
 "====================================================
@@ -235,14 +140,12 @@ nnoremap <cr> G
 nnoremap <bs> <c-w>W
 nnoremap <Tab> <c-w>w
 
-"Type asd in insert mode to go to normal mode.. 
-inoremap asd <Esc>	
+"Type asd in insert mode to go to normal mode..
+inoremap asd <Esc>
 
 "Center in on the line where the search element is found
-" nnoremap N Nzz						
-
-"Same
-" nnoremap n nzz						
+" nnoremap N Nzz
+" nnoremap n nzz
 
 "Open vimrc in a split to quickly make changes
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
@@ -269,7 +172,6 @@ set visualbell
 syntax enable
 filetype plugin indent on
 filetype on
-set nocompatible
 
 "For windows users. Doesn't do anything for others
 set clipboard=unnamed
