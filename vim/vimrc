@@ -38,7 +38,7 @@ autocmd BufNewFile *.html :r ~/.templates/HTML.html
 
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
-let g:syntastic_javascript_checkers = ['standard']
+" let g:syntastic_javascript_checkers = ['standard']
 
 "Use tab for auto-complete
 "=========================
@@ -56,6 +56,10 @@ set dictionary="/usr/dict/words"
 "=========================================================
 inoremap <expr> j ((pumvisible())?("\<C-n>"):("j"))
 inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
+
+function! RemoveTrailingSpace()
+    execute ":%s/\\s\\+$//"
+endfunction
 
 "Compiling c++ in one click
 "======================
@@ -230,21 +234,6 @@ set title
 "Unmap the arrow keys
 nnoremap <up> ddkP
 nnoremap <down> ddp
-
-"	««««««		Custom Mappings(Harmless)			»»»»»»
-"===========================================
-
-"general mappings
-nmap <C-Tab> :tabnext<CR>
-nmap <C-S-Tab> :tabprevious<CR>
-map <C-S-Tab> :tabprevious<CR>
-map <C-Tab> :tabnext<CR>
-imap <C-S-Tab> <ESC> :tabprevious<CR>
-imap <C-Tab> <ESC> :tabnext<CR>
-noremap <F7> :set expandtab!<CR>
-
-"Rarely used stuff
-nmap gO O<ESC>j
 
 " Vim Airline Customization
 "==========================

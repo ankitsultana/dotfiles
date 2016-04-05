@@ -66,7 +66,7 @@ do
 	prev_dir=$(echo $base_dir | grep -o ".*/")
 	filename=$(echo $f | awk '{gsub(/\/.*\//,"",$1); print}')
 	new_path=$prev_dir$filename
-	mv $f $new_path
+	mv "$f" "$new_path"
 done</string>
 					<key>CheckedForUserDefaultShell</key>
 					<true/>
@@ -177,12 +177,10 @@ done</string>
 						<string>4</string>
 					</dict>
 				</dict>
-				<key>conversionLabel</key>
-				<integer>0</integer>
 				<key>isViewVisible</key>
 				<true/>
 				<key>location</key>
-				<string>466.000000:436.000000</string>
+				<string>513.000000:253.000000</string>
 				<key>nibPath</key>
 				<string>/System/Library/Automator/Run Shell Script.action/Contents/Resources/English.lproj/main.nib</string>
 			</dict>

@@ -25,14 +25,14 @@ local return_code="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
 PROMPT='%{$fg[red]%}┌ %{$fg[red]%}$(virtualenv_info) %{$fg[blue]%}%~%{$reset_color%} ${return_code}
 '
 # Second line
-PROMPT+='%{$fg[red]%}└ $(prompt_online) $(git_prompt_info | sed "s/://g")'
-PROMPT+='%{$fg[red]%}%(!.#.»)%{$reset_color%} '
+PROMPT+='%{$fg[red]%}└ $(git_prompt_info | sed "s/://g")'
+PROMPT+='%{$fg[magenta]%}%(!.#.❯)%{$reset_color%} '
 
 function set_zsh_rprompt {
   if [ $(pmset -g batt | grep -c 'AC Power') -ne 0 ]; then
-    RPROMPT='%{$fg[green]%}⚡'
+    RPROMPT+='%{$fg[green]%}⚡'
   else
-    RPROMPT='%{$fg[red]%}×'
+    RPROMPT+='%{$fg[red]%}×'
   fi
   if [ $(pmset -g batt | grep -c '[0-2][0-9]\%') -ne 0 ]
   then
@@ -43,6 +43,7 @@ function set_zsh_rprompt {
   else
     RPROMPT+=' %{$fg[green]%}$(charge_value)#'
   fi
+  RPROMPT+='%{$reset_color%}'
 }
 
 ZSH_THEME_GIT_PROMPT_PREFIX="%{$reset_color%}:: %{$fg[yellow]%}("
@@ -53,7 +54,9 @@ ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[red]%}*%{$fg[yellow]%}"
 # set_zsh_prompt is too slow, hence using Python !
 function precmd {
   #set_zsh_rprompt
-  if [ $(uname -s) = "Darwin" ]; then
-    RPROMPT=$(python ~/.utilities/mybattery.py)
-  fi
+  # RPROMPT='%{$fg[yellow]%}$(osascript ~/.utilities/applescripts/itunes.scpt) %{$fg[blue]%}| '
+  RPROMPT=''
+  # if [ $(uname -s) = "Darwin" ]; then
+  # RPROMPT+=$(python ~/.utilities/mybattery.py)
+  # fi
 }
