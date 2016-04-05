@@ -1,9 +1,10 @@
 #### COLOUR
 
 battery_color=colour8
+date_color=colour7
 left_section_color1=colour0
 left_section_color2=colour8
-time_color=colour7
+time_color=colour255
 tm_color_active=colour39
 tm_color_inactive=colour241
 tm_color_feature=colour198
@@ -57,7 +58,7 @@ set-window-option -g clock-mode-colour $tm_color_active
 tm_tunes="#[fg=$tm_color_music]#(osascript ~/.utilities/applescripts/itunes.scpt)"
 tm_battery="#(~/.utilities/battery_indicator.sh)"
 
-tm_date="#[fg=$time_color] %R %d %b"
+tm_date="#[fg=$time_color] %R #[fg=$date_color]%d %b"
 tm_host="#[fg=$tm_color_feature,bold]#h"
 
 tm_session_name="#[bg=$battery_color]#[fg=$tm_color_feature,bold] $tm_battery"
