@@ -49,12 +49,12 @@ submit() {
 }
 
 templar() {
-	if [ -e $1 ] 
+	if [ -e $1 ]
 	then
 		echo "File Already exists!!"
 		read T
 		vim $1
-	else	
+	else
 		cp ~/.template2.cc $1
 		vim $1
 	fi

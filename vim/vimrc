@@ -11,7 +11,6 @@ let g:CommandTMaxFiles=50000
 let g:CommandTAlwaysShowDotFiles=1
 let g:CommandTTraverseSCM = 'pwd'
 
-
 "PowerLine related stuff
 " let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled=1
