@@ -22,11 +22,9 @@ set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h14
 
 set t_Co=16
 let g:onedark_termcolors=16
-let g:airline_theme='onedark'
-set background=dark
-colorscheme onedark
-
-set colorcolumn=80
+let g:airline_theme='base16'
+set background=light
+colorscheme base16-solarized
 
 set backspace=indent,eol,start
 

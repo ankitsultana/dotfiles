@@ -97,3 +97,4 @@ export PATH=/usr/local/bin/node:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+alias octave="/usr/local/octave/3.8.0/bin/octave-3.8.0 ; exit;"
