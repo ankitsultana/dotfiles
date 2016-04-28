@@ -11,6 +11,7 @@ export CLICOLOR=1
 export LSCOLORS=ExFxCxDxBxegedabagacad
 export PATH=$PATH:/Library/TeX/Distributions/.DefaultTeX/Contents/Programs/texbin
 export PYTHONPATH=$PYTHONPATH:/System/Library/Frameworks/Python.framework/Versions/2.7/Extras/lib/python/PyObjC
+export PYTHONPATH=$PYTHONPATH:/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/cv2-1.0-py2.7.egg-info
 
 if [ "$TERM_PROGRAM" = "Apple_Terminal" ]; then
 	ZSH_THEME="ankitsultana"
@@ -95,6 +96,7 @@ export PATH=/usr/local/lib/node_modules:$PATH
 export PATH=/Users/ankitsultana/.rbenv/shims:$PATH
 export PATH=/usr/local/bin/node:$PATH
 export PATH=/usr/local/share/npm/bin:$PATH
+export PATH=$PATH:/Users/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/iStats-1.2.0/
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias octave="/usr/local/octave/3.8.0/bin/octave-3.8.0 ; exit;"
