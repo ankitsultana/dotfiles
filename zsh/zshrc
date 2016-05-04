@@ -1,7 +1,9 @@
 export ZSH=/Users/ankitsultana/.oh-my-zsh
 autoload -U colors && colors
 
+source ~/.utilities/sh/upto.sh
 stty start undef stop undef
+
 
 setopt promptsubst
 RUBY_BUILD_CACHE_PATH="/Users/ankitsultana/.rbenv/cache"
