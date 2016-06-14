@@ -1,7 +1,10 @@
 execute pathogen#infect()
+set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
 
 set autoread
 au CursorHold * checktime
+
+"set foldmethod=indent
 
 map <F10> :echo "hi<" . synIDattr(synID(line("."),col("."),1),"name") . '> trans<'
 \ . synIDattr(synID(line("."),col("."),0),"name") . "> lo<"
@@ -36,7 +39,7 @@ autocmd BufNewFile *.html :r ~/.templates/HTML.html
 
 " let g:syntastic_always_populate_loc_list = 1
 " let g:syntastic_auto_loc_list = 1
-" let g:syntastic_javascript_checkers = ['standard']
+let g:syntastic_javascript_checkers = ['standard']
 
 "Use tab for auto-complete
 "=========================
@@ -173,6 +176,7 @@ set encoding=utf8
 set visualbell
 syntax enable
 filetype plugin indent on
+filetype plugin on
 filetype on
 
 "For windows users. Doesn't do anything for others

@@ -31,10 +31,14 @@ alias g++='clang++ -std=c++11'
 run_tests() {
 	local i=1
 	while [ $i != $1 ]; do
-		./a.out < $i
+		./a.out < $i'.in'
 		i=$((i+1))
 	done
-	./a.out < $i
+	./a.out < $i'.in'
+}
+
+zip_the_crap() {
+    env GZIP=-9 tar -zcvf $1'.tar.gz' $1
 }
 
 # Self Explanatory
@@ -102,3 +106,6 @@ export PATH=$PATH:/Users/.rbenv/versions/2.2.2/lib/ruby/gems/2.2.0/gems/iStats-1
 
 source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias octave="/usr/local/octave/3.8.0/bin/octave-3.8.0 ; exit;"
+
+export NVM_DIR="/Users/ankitsultana/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm

@@ -55,20 +55,20 @@ set-option -g display-panes-colour $tm_color_inactive
 # clock
 set-window-option -g clock-mode-colour $tm_color_active
 
+offline='#(~/.utilities/sh/offline.sh) '
 tm_tunes="#[fg=$tm_color_music]#(osascript ~/.utilities/applescripts/itunes.scpt)"
 tm_battery="#(~/.utilities/sh/battery_indicator.sh)"
 
 tm_date="#[fg=$time_color] %R #[fg=$date_color]%d %b"
 tm_host="#[fg=$tm_color_feature,bold]#h"
 
-tm_session_name="#[bg=$battery_color]#[fg=$tm_color_feature,bold] $tm_battery"
+tm_session_name="#[bg=$battery_color]#[fg=$tm_color_feature,bold] $tm_battery $offline"
 status_left=$tm_session_name" #[bg=colour0]#[fg=$battery_color]"$tm_left_separator_black" "
 
 set -g status-left $status_left
-offline='#(~/.utilities/sh/offline.sh) '
 
-mah_separator1="#[fg=$left_section_color1]$tm_right_separator_black#[bg=$left_section_color1]"
+mah_separator1="#[fg=colour0]$tm_right_separator_black#[bg=$left_section_color1]"
 mah_separator2="#[fg=$left_section_color2]$tm_right_separator_black#[bg=$left_section_color2]"
 
-status_right=$mah_separator1' '$tm_tunes' '$mah_separator2' '$tm_date' '$offline
+status_right=$mah_separator1' '$tm_tunes' '$mah_separator2' '$tm_date' '
 set -g status-right $status_right
