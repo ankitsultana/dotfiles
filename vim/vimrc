@@ -1,8 +1,11 @@
 execute pathogen#infect()
 set sessionoptions=blank,buffers,curdir,folds,globals,help,localoptions,options,resize,tabpages,winsize,winpos
 
+let g:syntastic_cpp_compiler='g++-7'
+
 set autoread
 au CursorHold * checktime
+let c_no_curly_error=1
 
 "set foldmethod=indent
 
@@ -15,7 +18,7 @@ let g:CommandTAlwaysShowDotFiles=1
 let g:CommandTTraverseSCM = 'pwd'
 
 "PowerLine related stuff
-" let g:airline_theme='onedark'
+let g:airline_theme='onedark'
 let g:airline#extensions#tabline#enabled=1
 let g:airline_powerline_fonts=1
 set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h14
@@ -25,20 +28,21 @@ set guifont=Meslo\ LG\ S\ Regular\ for\ Powerline:h14
 
 set t_Co=16
 let g:onedark_termcolors=16
-let g:airline_theme='customdark'
-set background=light
-colorscheme onedark
+"let g:airline_theme='customdark'
+"colorscheme onedark
+"let g:airline_theme="solarized"
+colorscheme solarized
+set background=dark
 let g:airline#themes#solarizedlight#constant=1
 
 set backspace=indent,eol,start
 
-autocmd BufNewFile *.html :r ~/.templates/HTML.html
+" autocmd BufNewFile *.html :r ~/.templates/HTML.html
+autocmd BufNewFile,BufRead *.cpp set syntax=cpp11
 
 " Syntastic Stuff
 "=======================
 
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
 let g:syntastic_javascript_checkers = ['standard']
 
 "Use tab for auto-complete
@@ -50,8 +54,17 @@ function! Tab_Or_Complete()
     return "\<Tab>"
   endif
 endfunction
-inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 set dictionary="/usr/dict/words"
+
+function! Crap()
+    if @% =~ '.*\.html$'
+        echo "Snippets Enabled/Auto Complete Disabled"
+    else
+        inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+    endif
+endfunction
+
+call Crap()
 
 "Use j and k to traverse through auto-complete suggestions
 "=========================================================
@@ -60,6 +73,10 @@ inoremap <expr> k ((pumvisible())?("\<C-p>"):("k"))
 
 function! RemoveTrailingSpace()
     execute ":%s/\\s\\+$//"
+endfunction
+
+function! TurnSyntasticOff()
+	execute ":SyntasticToggleMode"
 endfunction
 
 "Compiling c++ in one click
@@ -122,12 +139,15 @@ autocmd FileType markdown set spell spelllang=en_us
 " ««««««  Standard Javascript »»»»»»
 "==================================
 
-autocmd FileType javascript set tabstop=2
-autocmd FileType javascript set expandtab
-autocmd FileType javascript set shiftwidth=2
+autocmd FileType javascript set tabstop=4
+"autocmd FileType javascript set expandtab
+autocmd FileType javascript set shiftwidth=4
 autocmd FileType javascript retab
 
-nnoremap <leader>sp :call FixLastSpellingError()<cr>
+autocmd FileType python call TurnSyntasticOff()
+"autocmd Filetype python Python3Syntax
+
+" nnoremap <leader>sp :call FixLastSpellingError()<cr>
 
 "Function to wrap things up
 function! FixLastSpellingError()
@@ -142,8 +162,8 @@ endfunction
 nnoremap <cr> G
 
 "Switch between split panes in normal mode using Backspace
-nnoremap <bs> <c-w>W
-nnoremap <Tab> <c-w>w
+"nnoremap <bs> <c-w>W
+"nnoremap <Tab> <c-w>w
 
 "Type asd in insert mode to go to normal mode..
 inoremap asd <Esc>
@@ -156,7 +176,7 @@ inoremap asd <Esc>
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 
 "Source vimrc quickly
-noremap <leader>sv :source $MYVIMRC<cr>
+" noremap <leader>sv :source $MYVIMRC<cr>
 
 "Quote the selected WORD
 nnoremap <leader>" viw<esc>a"<esc>hbi"<esc>lel
@@ -208,13 +228,13 @@ set showcmd
 "Display the status line always
 set laststatus=2
 
-"Setting tab to 2 spaces
+"Setting tab
 set tabstop=4
-set expandtab
+set noexpandtab
 set shiftwidth=4
 
 "Indentation stuff
-set smarttab
+"set smarttab ; Don't ever use this again
 set autoindent
 set smartindent
 
@@ -234,8 +254,6 @@ set hlsearch
 set title
 
 "Unmap the arrow keys
-nnoremap <up> ddkP
-nnoremap <down> ddp
 
 " Vim Airline Customization
 "==========================
@@ -259,3 +277,10 @@ function! MyOverride()
 endfunction
 " autocmd VimEnter * call MyOverride()
 call camelcasemotion#CreateMotionMappings('<leader>')
+
+nnoremap <Leader>s :%s/\<<C-r><C-w>\>/
+
+set rtp+=~/.fzf
+
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprevious<CR>
