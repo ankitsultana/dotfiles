@@ -35,4 +35,4 @@ else
 fi
 
 echo $output
-echo $is_charging
+#echo $is_charging
