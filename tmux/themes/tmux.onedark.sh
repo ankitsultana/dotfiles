@@ -1,14 +1,14 @@
 #### COLOUR
 
 battery_color=colour8
-date_color=colour7
+date_color=colour12
 left_section_color1=colour0
 left_section_color2=colour8
-time_color=colour255
+time_color=colour12
 tm_color_active=colour39
 tm_color_inactive=colour241
 tm_color_feature=colour198
-tm_color_music=colour198
+tm_color_music=colour3
 tm_active_border_color=colour39
 
 # separators
@@ -33,7 +33,7 @@ set-option -g status-attr default
 # default window title colors
 set-window-option -g window-status-fg $tm_color_inactive
 set-window-option -g window-status-bg colour0
-set -g window-status-format "#I #W"
+set -g window-status-format "#I #W #F"
 
 # active window title colors
 set-window-option -g window-status-current-fg $tm_color_active
@@ -59,11 +59,11 @@ offline='#(~/.utilities/sh/offline.sh) '
 tm_tunes="#[fg=$tm_color_music]#(osascript ~/.utilities/applescripts/itunes.scpt)"
 tm_battery="#(~/.utilities/sh/battery_indicator.sh)"
 
-tm_date="#[fg=$time_color] %R #[fg=$date_color]%d %b"
+tm_date="#[fg=$time_color] %R #[fg=$date_color]%a %d %b"
 tm_host="#[fg=$tm_color_feature,bold]#h"
 
 tm_session_name="#[bg=$battery_color]#[fg=$tm_color_feature,bold] $tm_battery $offline"
-status_left=$tm_session_name" #[bg=colour0]#[fg=$battery_color]"$tm_left_separator_black" "
+status_left=$tm_session_name"| #[fg=colour9]#S #[bg=colour0]#[fg=$battery_color]"$tm_left_separator_black" "
 
 set -g status-left $status_left
 
