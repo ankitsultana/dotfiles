@@ -28,25 +28,32 @@ set -g status-interval 5
 # set-option -g status-bg colour0
 set-option -g status-fg $tm_color_active
 set-option -g status-bg colour0
-set-option -g status-attr default
+set-option -g status-style default
 
 # default window title colors
-set-window-option -g window-status-fg $tm_color_inactive
-set-window-option -g window-status-bg colour0
+#set-window-option -g window-status-fg $tm_color_inactive
+#set-window-option -g window-status-bg colour0
+set-window-option -g window-status-style fg=$tm_color_inactive,bg=colour0
 set -g window-status-format "#I #W #F"
 
 # active window title colors
-set-window-option -g window-status-current-fg $tm_color_active
-set-window-option -g window-status-current-bg colour0
-set-window-option -g  window-status-current-format "#[bold]#I #W"
+#set-window-option -g window-status-current-fg $tm_color_active
+#set-window-option -g window-status-current-bg colour0
+set-window-option -g window-status-current-style fg=$tm_color_active,bg=colour0
+#set-window-option -g window-status-current-bg colour0
+#set-window-option -g  window-status-current-format "#[bold]#I #W"
 
 # pane border
-set-option -g pane-border-fg $tm_color_inactive
-set-option -g pane-active-border-fg $tm_active_border_color
+#set-option -g pane-border-fg $tm_color_inactive
+#set-option -g pane-active-border-fg $tm_active_border_color
+set-option -g pane-border-style  fg=$tm_color_inactive
+set-option -g pane-active-border-style fg=$tm_active_border_color
 
 # message text
-set-option -g message-bg default
-set-option -g message-fg $tm_color_active
+#set-option -g message-bg default
+#set-option -g message-fg $tm_color_active
+set-option -g message-style bg=default,fg=$tm_color_active
+#set-option -g message-fg 
 
 # pane number display
 set-option -g display-panes-active-colour $tm_color_active
@@ -55,14 +62,15 @@ set-option -g display-panes-colour $tm_color_inactive
 # clock
 set-window-option -g clock-mode-colour $tm_color_active
 
-offline='#(~/.utilities/sh/offline.sh) '
-tm_tunes="#[fg=$tm_color_music]#(osascript ~/.utilities/applescripts/itunes.scpt)"
+offline="#(~/.utilities/sh/offline.sh)"
+tm_tunes="#[fg=$tm_color_music]#(osascript ~/.utilities/applescripts/spotify.scpt)"
+#tm_tunes="#[fg=$tm_color_music] itunes"
 tm_battery="#(~/.utilities/sh/battery_indicator.sh)"
 
 tm_date="#[fg=$time_color] %R #[fg=$date_color]%a %d %b"
 tm_host="#[fg=$tm_color_feature,bold]#h"
 
-tm_session_name="#[bg=$battery_color]#[fg=$tm_color_feature,bold] $tm_battery $offline"
+tm_session_name="#[bg=$battery_color]#[fg=$tm_color_feature,bold] $tm_battery $offline "
 status_left=$tm_session_name"| #[fg=colour9]#S #[bg=colour0]#[fg=$battery_color]"$tm_left_separator_black" "
 
 set -g status-left $status_left
